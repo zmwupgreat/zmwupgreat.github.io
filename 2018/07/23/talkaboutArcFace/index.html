@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon96.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snail_32px_1214917_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon96.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="SnailZBlog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="摘要作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈一款优秀的人脸识别引擎">
+<meta property="og:url" content="http://yoursite.com/2018/07/23/talkaboutArcFace/index.html">
+<meta property="og:site_name" content="SnailZBlog">
+<meta property="og:description" content="摘要作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/07/23/talkaboutArcFace/face.jpg">
+<meta property="og:updated_time" content="2018-07-28T07:18:55.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈一款优秀的人脸识别引擎">
+<meta name="twitter:description" content="摘要作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/23/talkaboutArcFace/face.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/23/talkaboutArcFace/"/>
+
+
+
+
+
+  <title>谈谈一款优秀的人脸识别引擎 | SnailZBlog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7ac869bdb02011bb322f385c1d86f3f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SnailZBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/23/talkaboutArcFace/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SnailZ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SnailZBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">谈谈一款优秀的人脸识别引擎</h1>
+        
+
+        <div class="post-meta">
+		  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-23T21:01:44+08:00">
+                2018-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/人脸识别/" itemprop="url" rel="index">
+                    <span itemprop="name">人脸识别</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,580
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/07/23/talkaboutArcFace/face.jpg" alt="face"></p>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。<br><a id="more"></a></p>
+<h1 id="总的来说"><a href="#总的来说" class="headerlink" title="总的来说"></a>总的来说</h1><p>虹软真的是个大方的公司，我刚接触到它就是因为它把人脸识别引擎免费了。考虑到以前一个引擎的价格都是万元级的，这真的是一个令人吃惊的决定。而且arcface最初分为三个引擎detection，recognition，tracking。而且覆盖了windows，android和linux三个平台。做的很全，很小，整套引擎才30多兆。到现在arcface还增加了性别和年龄识别的引擎。总的来说很良心。</p>
+<h1 id="demo和资料"><a href="#demo和资料" class="headerlink" title="demo和资料"></a>demo和资料</h1><p>在虹软的官网上有个互助社区，上面各种大神在聊天，发帖回的也蛮快的。他们公司还总结了各个大神们做的有意思的demo的地址。我就试过最早出的那个windows平台上的demo，用mfc写的，虽然小但是很完整。把虹软的基础引擎的功能都很清晰简洁地展示出来了。我自己基于Qt写了个<a href="https://github.com/zmwupgreat/Qt_ArcFace_detection" target="_blank" rel="noopener">人脸考勤</a>，时间比较急，写的比较简单，使用到了detection和recognition引擎。</p>
+<p>arcface的文档写的还是很清楚的，它将标准库的数据类型都typedef了，都加了个M但是没什么影响。我主要用到的是detection和recognition两个引擎所以主要记录一下用这两个引擎的使用方法。</p>
+<h3 id="引擎初始化"><a href="#引擎初始化" class="headerlink" title="引擎初始化"></a>引擎初始化</h3><p>首先要把相关的头文件加到工作目录里，把lib添加到项目中，配置好动态链接库。<br>头文件如下：</p>
+<ul>
+<li>amcomdef.h</li>
+<li>ammem.h</li>
+<li>arcsoft_fsdk_face_detection.h</li>
+<li>arcsoft_fsdk_face_recognition.h</li>
+<li>asvloffscreen.h</li>
+<li>merror.h</li>
+<li>key.h<br>最后一个头文件是把虹软的引擎的key放在里面，他们的key和引擎是绑定的，而且每年都要更新一次（跟时间有关嘻嘻都懂得）。<br>下面是我常用的引擎初始化示例代码:</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InitEngine</span><span class="params">(MHandle &amp;FDEngine, MHandle &amp;FREngine)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MInt32 nScale = <span class="number">16</span>;</span><br><span class="line">    MInt32 nMaxFace = <span class="number">1</span>;</span><br><span class="line">    MByte *fd_pWorkMem = <span class="literal">nullptr</span>;</span><br><span class="line">    FDEngine = <span class="literal">nullptr</span>;</span><br><span class="line">    fd_pWorkMem = (MByte *)<span class="built_in">malloc</span>(WORKBUF_SIZE_FD);</span><br><span class="line">    <span class="keyword">if</span> (fd_pWorkMem == <span class="literal">nullptr</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> fdret = AFD_FSDK_InitialFaceEngine((MPChar)APPID, (MPChar)FD_SDKKEY, fd_pWorkMem, WORKBUF_SIZE_FD, &amp;FDEngine, AFD_FSDK_OPF_0_HIGHER_EXT, nScale, nMaxFace);</span><br><span class="line"></span><br><span class="line">    MByte *fr_pWorkMem = <span class="literal">nullptr</span>;</span><br><span class="line">    FREngine = <span class="literal">nullptr</span>;</span><br><span class="line">    fr_pWorkMem = (MByte *)<span class="built_in">malloc</span>(WORKBUF_SIZE_FD);</span><br><span class="line">    <span class="keyword">if</span> (fr_pWorkMem == <span class="literal">nullptr</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> fr_ret = AFR_FSDK_InitialEngine((MPChar)APPID, (MPChar)FR_SDKKEY, fr_pWorkMem, WORKBUF_SIZE_FD, &amp;FREngine);</span><br><span class="line">    <span class="keyword">if</span> (fdret != MOK || fr_ret != MOK)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"初始化失败:"</span> &lt;&lt; <span class="string">"检测代码："</span> &lt;&lt; fdret &lt;&lt; <span class="string">"识别代码："</span> &lt;&lt; fr_ret &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"初始化成功"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="detection引擎初始化函数"><a href="#detection引擎初始化函数" class="headerlink" title="detection引擎初始化函数"></a>detection引擎初始化函数</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> fdret = AFD_FSDK_InitialFaceEngine((MPChar)APPID, (MPChar)FD_SDKKEY, fd_pWorkMem, WORKBUF_SIZE_FD, &amp;FDEngine, AFD_FSDK_OPF_0_HIGHER_EXT, nScale, nMaxFace);</span><br></pre></td></tr></table></figure>
+<h6 id="参数如下："><a href="#参数如下：" class="headerlink" title="参数如下："></a>参数如下：</h6><ul>
+<li>APPID ：key</li>
+<li>FD_SDKKEY ：key</li>
+<li>fd_pWorkMem ：分配给引擎使用的内存地址</li>
+<li>WORKBUF_SIZE_FD ：分配给引擎使用的内存大小,我按照demo设置为（40x1024x1024）</li>
+<li>FDEngine ：引擎句柄</li>
+<li>AFD_FSDK_OPF_0_HIGHER_EXT : 期望的脸部检测角度的优先级（这个参数是检测0，90，180，270四个方向，0度更优先）</li>
+<li>nScale ：表示最小人脸尺寸，推荐值16</li>
+<li>nMaxFace ：同时检测的最多人脸数量，我一般是一个一个人脸进行操作的所以这个值为1</li>
+<li>返回值 ：MRESULT类型的，在官网上有对应的每个错误码的意思。若为MOK则初始化成功。</li>
+</ul>
+<h5 id="recognition引擎初始化函数"><a href="#recognition引擎初始化函数" class="headerlink" title="recognition引擎初始化函数"></a>recognition引擎初始化函数</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> fr_ret = AFR_FSDK_InitialEngine((MPChar)APPID, (MPChar)FR_SDKKEY, fr_pWorkMem, WORKBUF_SIZE_FD, &amp;FREngine);</span><br></pre></td></tr></table></figure>
+<p>参数与detection初始化函数相似</p>
+<h5 id="引擎销毁函数"><a href="#引擎销毁函数" class="headerlink" title="引擎销毁函数"></a>引擎销毁函数</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">MRESULT <span class="title">AFD_FSDK_UninitialFaceEngine</span><span class="params">(  MHandle hEngine )</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这个销毁函数特别重要，在使用完引擎进行人脸检测和人脸识别过后一定要记住销毁引擎和释放前面malloc的引擎使用空间。</p>
+<h3 id="人脸检测和特征提取"><a href="#人脸检测和特征提取" class="headerlink" title="人脸检测和特征提取"></a>人脸检测和特征提取</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">GetFeature</span><span class="params">(MHandle &amp;FDEngine, MHandle &amp;FREngine, String imgpath, AFR_FSDK_FACEMODEL &amp;Feature,cv::Mat &amp;cropFace)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        cv::Mat img = cv::imread(imgpath, <span class="number">1</span>);</span><br><span class="line">        ASVLOFFSCREEN  Image = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">         Image.u32PixelArrayFormat = ASVL_PAF_RGB24_B8G8R8;</span><br><span class="line">         Image.ppu8Plane[<span class="number">0</span>] = <span class="literal">nullptr</span>;</span><br><span class="line">        ConvertMatImage(img, &amp;Image);</span><br><span class="line">         Image.pi32Pitch[<span class="number">0</span>] =  Image.i32Width * <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/****** 检测人脸   ******/</span></span><br><span class="line">        MRESULT  Ret = MERR_UNKNOWN;</span><br><span class="line">        LPAFD_FSDK_FACERES  face  = <span class="literal">nullptr</span>;</span><br><span class="line">         Ret = AFD_FSDK_StillImageFaceDetection(FDEngine, &amp; Image, &amp;face );</span><br><span class="line">        <span class="keyword">if</span> ( Ret != MOK || face-&gt;nFace &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            qDebug()&lt;&lt; <span class="string">"检测不到人脸"</span>;</span><br><span class="line">            <span class="built_in">free</span>( Image.ppu8Plane[<span class="number">0</span>]);</span><br><span class="line">            img.release();</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/****** 提取特征   ******/</span></span><br><span class="line">        AFR_FSDK_FACEINPUT faceResult;</span><br><span class="line">        faceResult.lOrient = face-&gt;lfaceOrient[<span class="number">0</span>];</span><br><span class="line">        faceResult.rcFace.left = face-&gt;rcFace[<span class="number">0</span>].left;</span><br><span class="line">        faceResult.rcFace.top = face-&gt;rcFace[<span class="number">0</span>].top;</span><br><span class="line">        faceResult.rcFace.right = face-&gt;rcFace[<span class="number">0</span>].right;</span><br><span class="line">        faceResult.rcFace.bottom = face-&gt;rcFace[<span class="number">0</span>].bottom;</span><br><span class="line">        AFR_FSDK_FACEMODEL LocalFaceModels = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">        MRESULT nRet = AFR_FSDK_ExtractFRFeature(FREngine, &amp;Image, &amp;faceResult, &amp;LocalFaceModels);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nRet != MOK)</span><br><span class="line">        &#123;</span><br><span class="line">            qDebug()&lt;&lt; <span class="string">"提取特征失败"</span>;</span><br><span class="line">            <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"fail to Extract 1st FR Feature, error code: %d\r\n"</span>, nRet);</span><br><span class="line">            <span class="built_in">free</span>(Image.ppu8Plane[<span class="number">0</span>]);</span><br><span class="line">            img.release();</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Feature.lFeatureSize = LocalFaceModels.lFeatureSize;</span><br><span class="line">        Feature.pbFeature = (MByte*)<span class="built_in">malloc</span>(Feature.lFeatureSize);</span><br><span class="line">        <span class="built_in">memcpy</span>(Feature.pbFeature, LocalFaceModels.pbFeature, Feature.lFeatureSize);</span><br><span class="line">        <span class="comment">//切割有脸的部分</span></span><br><span class="line">        <span class="keyword">int</span> x,y,width,height;</span><br><span class="line">        width = face-&gt;rcFace-&gt;right - face-&gt;rcFace-&gt;left;</span><br><span class="line">        height = face-&gt;rcFace-&gt;bottom - face-&gt;rcFace-&gt;top;</span><br><span class="line">        x = face-&gt;rcFace-&gt;left -(width/<span class="number">6</span>);</span><br><span class="line">        y = face-&gt;rcFace-&gt;top - (height/<span class="number">6</span>);</span><br><span class="line">        width = (width * <span class="number">4</span>) / <span class="number">3</span>;</span><br><span class="line">        height = (height * <span class="number">4</span>) / <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>)</span><br><span class="line">            x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (y &lt; <span class="number">0</span>)</span><br><span class="line">            y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> ((x + width)&gt;img.cols)</span><br><span class="line">            width = img.cols - x;</span><br><span class="line">        <span class="keyword">if</span> ((y + height)&gt;img.rows)</span><br><span class="line">            height = img.rows - y;</span><br><span class="line">        cv::<span class="function">Rect <span class="title">Rect</span><span class="params">(x,y, width, height)</span></span>;</span><br><span class="line">        cropFace = img(Rect).clone();</span><br><span class="line">        <span class="built_in">free</span>(Image.ppu8Plane[<span class="number">0</span>]);</span><br><span class="line">        img.release();</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="参数如下：-1"><a href="#参数如下：-1" class="headerlink" title="参数如下："></a>参数如下：</h5><ul>
+<li>FDEngine ：检测引擎句柄</li>
+<li>FREngine ：识别引擎句柄</li>
+<li>imgpath ：图像地址</li>
+<li>Feature ：提取的人脸特征</li>
+<li>cropFace ：截取的人脸头像<br>其中人脸特征为一个结构体，结构体内容为MByte*的pbFeature存储人脸特征值的二进制串，和MInt的lFeatureSize表示人脸特征二进制串的长度一般长度为22020。</li>
+</ul>
+<h3 id="人脸特征比对"><a href="#人脸特征比对" class="headerlink" title="人脸特征比对"></a>人脸特征比对</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">MRESULT <span class="title">AFR_FSDK_FacePairMatching</span><span class="params">(MHandle hEngine,AFR_FSDK_FACEMODEL *reffeature,AFR_FSDK_FACEMODEL *probefeature,MFloat *pfSimilScore)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>人脸比对的方式最简单，将比对引擎的句柄和两个人脸的特征值传入该函数即可计算出两张人脸的相似度。若返回MOK则为比对成功。经过自己做的lfw的测试，该引擎的精确度大概在97%左右。同时该引擎能够较好的支持多线程的程序。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这是第一次写跟技术有关的博文感觉很刺激，废话很多，后面希望能不断进步。虹软关于人脸的引擎还有几个，若有时间再试试其他的引擎。在多线程的编程中还遇到一点未知的小问题，应该是我太菜才造成的问题，以后找到原因还会写一篇总结一下。就这样吧。蜗壳真的强。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/22/Fight-FirstWeek/" rel="next" title="蜗牛移山第一周">
+                <i class="fa fa-chevron-left"></i> 蜗牛移山第一周
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/26/firstarithmetic/" rel="prev" title="蜗牛算法积累（一）----单向不循环链表删除">
+                蜗牛算法积累（一）----单向不循环链表删除 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/author.png"
+                alt="SnailZ" />
+            
+              <p class="site-author-name" itemprop="name">SnailZ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zmwupgreat" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zmw961125@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/snailzhou" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/maoweizhou" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总的来说"><span class="nav-number">2.</span> <span class="nav-text">总的来说</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#demo和资料"><span class="nav-number">3.</span> <span class="nav-text">demo和资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎初始化"><span class="nav-number">3.0.1.</span> <span class="nav-text">引擎初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#detection引擎初始化函数"><span class="nav-number">3.0.1.0.1.</span> <span class="nav-text">detection引擎初始化函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#参数如下："><span class="nav-number">3.0.1.0.1.1.</span> <span class="nav-text">参数如下：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#recognition引擎初始化函数"><span class="nav-number">3.0.1.0.2.</span> <span class="nav-text">recognition引擎初始化函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#引擎销毁函数"><span class="nav-number">3.0.1.0.3.</span> <span class="nav-text">引擎销毁函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人脸检测和特征提取"><span class="nav-number">3.0.2.</span> <span class="nav-text">人脸检测和特征提取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数如下：-1"><span class="nav-number">3.0.2.0.1.</span> <span class="nav-text">参数如下：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人脸特征比对"><span class="nav-number">3.0.3.</span> <span class="nav-text">人脸特征比对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.0.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SnailZ</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">8.0k</span>
+  
+</div>
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span><!-- 由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 --></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+
+<!--
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共8.0k字</span>
+</div>
+-->
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

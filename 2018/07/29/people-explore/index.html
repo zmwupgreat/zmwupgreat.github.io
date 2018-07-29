@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon96.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snail_32px_1214917_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon96.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="SnailZBlog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="摘要把上次花了几天时间写的人脸考勤系统的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人脸考勤设计思路">
+<meta property="og:url" content="http://yoursite.com/2018/07/29/people-explore/index.html">
+<meta property="og:site_name" content="SnailZBlog">
+<meta property="og:description" content="摘要把上次花了几天时间写的人脸考勤系统的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-29T03:01:15.462Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="人脸考勤设计思路">
+<meta name="twitter:description" content="摘要把上次花了几天时间写的人脸考勤系统的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/29/people-explore/"/>
+
+
+
+
+
+  <title>人脸考勤设计思路 | SnailZBlog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7ac869bdb02011bb322f385c1d86f3f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SnailZBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/29/people-explore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SnailZ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SnailZBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">人脸考勤设计思路</h1>
+        
+
+        <div class="post-meta">
+		  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T10:05:22+08:00">
+                2018-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/人脸识别/" itemprop="url" rel="index">
+                    <span itemprop="name">人脸识别</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  970
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>把上次花了几天时间写的<a href="https://github.com/zmwupgreat/Qt_ArcFace_detection" target="_blank" rel="noopener">人脸考勤系统</a>的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。<br><a id="more"></a></p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>用到了虹软的人脸识别引擎，Qt Creator，SQLite</p>
+<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><p>人脸考勤系统主要包括 大模块：</p>
+<h5 id="主界面模块"><a href="#主界面模块" class="headerlink" title="主界面模块"></a>主界面模块</h5><p>主界面模块作为数据逻辑处理</p>
+<h5 id="人脸识别模块"><a href="#人脸识别模块" class="headerlink" title="人脸识别模块"></a>人脸识别模块</h5><p>人脸识别模块开辟独立线程，对于主界面传输过来的图像进行处理，检测，提取人脸特征，并将人脸特征保存在本地。</p>
+<h5 id="人脸检索模块"><a href="#人脸检索模块" class="headerlink" title="人脸检索模块"></a>人脸检索模块</h5><p>人脸检索模块开辟独立线程，并使用线程池管理多个子线程读取本地特征文件并与采集人脸特征进行比对，找到相似度最高的人脸图像并向主界面发送信号。</p>
+<h5 id="人员信息数据模块"><a href="#人员信息数据模块" class="headerlink" title="人员信息数据模块"></a>人员信息数据模块</h5><p>人员信息显示模块，</p>
+<h5 id="签到数据模块"><a href="#签到数据模块" class="headerlink" title="签到数据模块"></a>签到数据模块</h5><p>人员签到信息显示模块</p>
+<h5 id="数据库模块"><a href="#数据库模块" class="headerlink" title="数据库模块"></a>数据库模块</h5><p>该系统维护一个数据库，包括两个表，人员信息表和签到数据表，数据库模块主要是对两个表的增删改查的接口的实现。</p>
+<h5 id="摄像头模块"><a href="#摄像头模块" class="headerlink" title="摄像头模块"></a>摄像头模块</h5><p>摄像头模块将摄像头采集图像进行缩放处理后放置主界面进行显示，并在需要进行图像采集时保存当前帧图像。</p>
+<h1 id="流程设计"><a href="#流程设计" class="headerlink" title="流程设计"></a>流程设计</h1><p>人脸考勤系统的使用流程大概是这样的：</p>
+<ul>
+<li>1、用户点击录入按钮进行人员的信息录入，录入过程中包括，提取人脸照片特征值，将人脸特征及采集照片保存在本地。同时将地址与人员信息写入数据库。</li>
+<li>2、在人员信息管理模块中可以查找对应人员的信息及采集图像。</li>
+<li>3、点击一键签到，触发人脸检索模块的人脸检索功能，将本地的人脸特征进行遍历比对，找到相似度最高的人脸信息进行显示。</li>
+<li>4、在签到信息管理模块中可以找到人员签到的详细情况。</li>
+</ul>
+<h5 id="信息录入"><a href="#信息录入" class="headerlink" title="信息录入"></a>信息录入</h5><p>从摄像头模块获取一帧的图像，在弹出的窗口中用户输入相关的信息，窗口检查信息是否填写完整，完整则将所填信息存入一个结构体中。触发人脸识别模块的开始，在线程中对采集的人脸图像进行人脸检测，特征提取，人脸截取。最后由主界面显示人员信息并存入数据库。</p>
+<h5 id="一键签到"><a href="#一键签到" class="headerlink" title="一键签到"></a>一键签到</h5><p>从摄像头模块获取一帧图像，在线程中开辟4个子线程由线程池管理，4个子线程读取本地特征数据，与采集的人脸进行比对，找到相似度最高人脸进行信息显示并存入数据库。</p>
+<h1 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h1><ul>
+<li>1、人脸识别模块可与人脸检索模块进行整合，避免代码的冗余。</li>
+<li>2、将人脸特征值保存在本地是因为特征长度太长，若读入内存会造成内存不足的情况，但是从磁盘中读取速度过慢，要找到一个能够平衡的方法，提高检索速度。</li>
+<li>3、线程池中管理的内存在每次比对时都要对人脸识别引擎进行初始化和销毁引擎造成检索速度过慢。</li>
+<li>4、没有理解线程管理的方法，仅使用简单的线程池来管理，使得线程的使用受到限制，效率过低。</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>抽空对多线程管理进行复习，改进线程管理的部分。提高人脸检索的效率。蜗壳真的强。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/28/arithmetic2/" rel="next" title="蜗牛算法积累（二）----导弹拦截（求最长递减数列）">
+                <i class="fa fa-chevron-left"></i> 蜗牛算法积累（二）----导弹拦截（求最长递减数列）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/29/arithmetic3/" rel="prev" title="蜗牛算法积累（三）----翻转数组">
+                蜗牛算法积累（三）----翻转数组 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/author.png"
+                alt="SnailZ" />
+            
+              <p class="site-author-name" itemprop="name">SnailZ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zmwupgreat" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zmw961125@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/snailzhou" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/maoweizhou" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">2.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统设计"><span class="nav-number">3.</span> <span class="nav-text">系统设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主界面模块"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">主界面模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#人脸识别模块"><span class="nav-number">3.0.0.0.2.</span> <span class="nav-text">人脸识别模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#人脸检索模块"><span class="nav-number">3.0.0.0.3.</span> <span class="nav-text">人脸检索模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#人员信息数据模块"><span class="nav-number">3.0.0.0.4.</span> <span class="nav-text">人员信息数据模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#签到数据模块"><span class="nav-number">3.0.0.0.5.</span> <span class="nav-text">签到数据模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据库模块"><span class="nav-number">3.0.0.0.6.</span> <span class="nav-text">数据库模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#摄像头模块"><span class="nav-number">3.0.0.0.7.</span> <span class="nav-text">摄像头模块</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程设计"><span class="nav-number">4.</span> <span class="nav-text">流程设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#信息录入"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">信息录入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一键签到"><span class="nav-number">4.0.0.0.2.</span> <span class="nav-text">一键签到</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不足"><span class="nav-number">5.</span> <span class="nav-text">不足</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SnailZ</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">8.0k</span>
+  
+</div>
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span><!-- 由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 --></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+
+<!--
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共8.0k字</span>
+</div>
+-->
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
