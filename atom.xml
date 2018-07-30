@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.snailz.top/"/>
   <updated>2018-07-30T04:59:33.991Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.snailz.top/</id>
   
   <author>
     <name>SnailZ</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>蜗牛基础积累（一）----Shell Script的基本用法</title>
-    <link href="http://yoursite.com/2018/07/30/fundamental1/"/>
-    <id>http://yoursite.com/2018/07/30/fundamental1/</id>
+    <link href="http://www.snailz.top/2018/07/30/fundamental1/"/>
+    <id>http://www.snailz.top/2018/07/30/fundamental1/</id>
     <published>2018-07-30T04:53:32.000Z</published>
     <updated>2018-07-30T04:59:33.991Z</updated>
     
@@ -31,15 +31,15 @@
     
     </summary>
     
-      <category term="基础积累" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/"/>
+      <category term="基础积累" scheme="http://www.snailz.top/categories/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>蜗牛算法积累（三）----翻转数组</title>
-    <link href="http://yoursite.com/2018/07/29/arithmetic3/"/>
-    <id>http://yoursite.com/2018/07/29/arithmetic3/</id>
+    <link href="http://www.snailz.top/2018/07/29/arithmetic3/"/>
+    <id>http://www.snailz.top/2018/07/29/arithmetic3/</id>
     <published>2018-07-29T04:48:01.000Z</published>
     <updated>2018-07-29T11:45:18.564Z</updated>
     
@@ -51,15 +51,15 @@
     
     </summary>
     
-      <category term="面试算法积累" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+      <category term="面试算法积累" scheme="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>人脸考勤设计思路</title>
-    <link href="http://yoursite.com/2018/07/29/people-explore/"/>
-    <id>http://yoursite.com/2018/07/29/people-explore/</id>
+    <link href="http://www.snailz.top/2018/07/29/people-explore/"/>
+    <id>http://www.snailz.top/2018/07/29/people-explore/</id>
     <published>2018-07-29T02:05:22.000Z</published>
     <updated>2018-07-29T03:01:15.462Z</updated>
     
@@ -71,15 +71,15 @@
     
     </summary>
     
-      <category term="人脸识别" scheme="http://yoursite.com/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+      <category term="人脸识别" scheme="http://www.snailz.top/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
     
     
   </entry>
   
   <entry>
     <title>蜗牛算法积累（二）----导弹拦截（求最长递减数列）</title>
-    <link href="http://yoursite.com/2018/07/28/arithmetic2/"/>
-    <id>http://yoursite.com/2018/07/28/arithmetic2/</id>
+    <link href="http://www.snailz.top/2018/07/28/arithmetic2/"/>
+    <id>http://www.snailz.top/2018/07/28/arithmetic2/</id>
     <published>2018-07-28T07:27:19.000Z</published>
     <updated>2018-07-28T07:43:43.191Z</updated>
     
@@ -91,15 +91,15 @@
     
     </summary>
     
-      <category term="面试算法积累" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+      <category term="面试算法积累" scheme="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>蜗牛墙裂安利（一）</title>
-    <link href="http://yoursite.com/2018/07/28/share1/"/>
-    <id>http://yoursite.com/2018/07/28/share1/</id>
+    <link href="http://www.snailz.top/2018/07/28/share1/"/>
+    <id>http://www.snailz.top/2018/07/28/share1/</id>
     <published>2018-07-28T06:20:01.000Z</published>
     <updated>2018-07-30T05:37:25.488Z</updated>
     
@@ -112,15 +112,15 @@
     
     </summary>
     
-      <category term="墙裂安利" scheme="http://yoursite.com/categories/%E5%A2%99%E8%A3%82%E5%AE%89%E5%88%A9/"/>
+      <category term="墙裂安利" scheme="http://www.snailz.top/categories/%E5%A2%99%E8%A3%82%E5%AE%89%E5%88%A9/"/>
     
     
   </entry>
   
   <entry>
     <title>蜗牛移山第二周</title>
-    <link href="http://yoursite.com/2018/07/28/Fight-SecondWeek/"/>
-    <id>http://yoursite.com/2018/07/28/Fight-SecondWeek/</id>
+    <link href="http://www.snailz.top/2018/07/28/Fight-SecondWeek/"/>
+    <id>http://www.snailz.top/2018/07/28/Fight-SecondWeek/</id>
     <published>2018-07-28T03:48:52.000Z</published>
     <updated>2018-07-30T05:36:53.905Z</updated>
     
@@ -133,15 +133,15 @@
     
     </summary>
     
-      <category term="杂事闲谈" scheme="http://yoursite.com/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
+      <category term="杂事闲谈" scheme="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
     
     
   </entry>
   
   <entry>
     <title>蜗牛算法积累（一）----单向不循环链表删除</title>
-    <link href="http://yoursite.com/2018/07/26/firstarithmetic/"/>
-    <id>http://yoursite.com/2018/07/26/firstarithmetic/</id>
+    <link href="http://www.snailz.top/2018/07/26/firstarithmetic/"/>
+    <id>http://www.snailz.top/2018/07/26/firstarithmetic/</id>
     <published>2018-07-26T15:57:35.000Z</published>
     <updated>2018-07-28T02:14:06.435Z</updated>
     
@@ -153,15 +153,15 @@
     
     </summary>
     
-      <category term="面试算法积累" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+      <category term="面试算法积累" scheme="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>谈谈一款优秀的人脸识别引擎</title>
-    <link href="http://yoursite.com/2018/07/23/talkaboutArcFace/"/>
-    <id>http://yoursite.com/2018/07/23/talkaboutArcFace/</id>
+    <link href="http://www.snailz.top/2018/07/23/talkaboutArcFace/"/>
+    <id>http://www.snailz.top/2018/07/23/talkaboutArcFace/</id>
     <published>2018-07-23T13:01:44.000Z</published>
     <updated>2018-07-30T05:37:11.962Z</updated>
     
@@ -174,15 +174,15 @@
     
     </summary>
     
-      <category term="人脸识别" scheme="http://yoursite.com/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+      <category term="人脸识别" scheme="http://www.snailz.top/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
     
     
   </entry>
   
   <entry>
     <title>蜗牛移山第一周</title>
-    <link href="http://yoursite.com/2018/07/22/Fight-FirstWeek/"/>
-    <id>http://yoursite.com/2018/07/22/Fight-FirstWeek/</id>
+    <link href="http://www.snailz.top/2018/07/22/Fight-FirstWeek/"/>
+    <id>http://www.snailz.top/2018/07/22/Fight-FirstWeek/</id>
     <published>2018-07-22T07:27:37.000Z</published>
     <updated>2018-07-30T05:36:34.473Z</updated>
     
@@ -195,15 +195,15 @@
     
     </summary>
     
-      <category term="杂事闲谈" scheme="http://yoursite.com/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
+      <category term="杂事闲谈" scheme="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
     
     
   </entry>
   
   <entry>
     <title>Hello-SnailZBlog</title>
-    <link href="http://yoursite.com/2018/07/22/%C2%96Hello-SnailZBlog/"/>
-    <id>http://yoursite.com/2018/07/22/Hello-SnailZBlog/</id>
+    <link href="http://www.snailz.top/2018/07/22/%C2%96Hello-SnailZBlog/"/>
+    <id>http://www.snailz.top/2018/07/22/Hello-SnailZBlog/</id>
     <published>2018-07-22T03:33:30.000Z</published>
     <updated>2018-07-30T05:36:15.176Z</updated>
     
@@ -216,7 +216,7 @@
     
     </summary>
     
-      <category term="关于Snail" scheme="http://yoursite.com/categories/%E5%85%B3%E4%BA%8ESnail/"/>
+      <category term="关于Snail" scheme="http://www.snailz.top/categories/%E5%85%B3%E4%BA%8ESnail/"/>
     
     
   </entry>
