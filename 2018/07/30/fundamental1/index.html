@@ -83,14 +83,14 @@
 
 <meta name="description" content="摘要又是一篇乘凉的文章，看到钓叟的博客学习了一下，重新手打了一遍。钓叟种树我乘凉，以前用shell都很暴力，这回好好总结一波。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fundamental1">
+<meta property="og:title" content="蜗牛基础积累（一）----Shell Script的基本用法">
 <meta property="og:url" content="http://yoursite.com/2018/07/30/fundamental1/index.html">
 <meta property="og:site_name" content="SnailZBlog">
 <meta property="og:description" content="摘要又是一篇乘凉的文章，看到钓叟的博客学习了一下，重新手打了一遍。钓叟种树我乘凉，以前用shell都很暴力，这回好好总结一波。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-30T04:54:10.524Z">
+<meta property="og:updated_time" content="2018-07-30T04:59:33.991Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fundamental1">
+<meta name="twitter:title" content="蜗牛基础积累（一）----Shell Script的基本用法">
 <meta name="twitter:description" content="摘要又是一篇乘凉的文章，看到钓叟的博客学习了一下，重新手打了一遍。钓叟种树我乘凉，以前用shell都很暴力，这回好好总结一波。">
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>fundamental1 | SnailZBlog</title>
+  <title>蜗牛基础积累（一）----Shell Script的基本用法 | SnailZBlog</title>
   
 
 
@@ -271,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">fundamental1</h1>
+          <h1 class="post-title" itemprop="name headline">蜗牛基础积累（一）----Shell Script的基本用法</h1>
         
 
         <div class="post-meta">
@@ -294,6 +294,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础积累/" itemprop="url" rel="index">
+                    <span itemprop="name">基础积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -358,7 +380,7 @@
 <h1 id="Shell-Script执行的三种方式"><a href="#Shell-Script执行的三种方式" class="headerlink" title="Shell Script执行的三种方式"></a>Shell Script执行的三种方式</h1><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- <span class="number">1</span>、./xxx.<span class="keyword">sh</span>或者path/xxx.<span class="keyword">sh</span></span><br><span class="line">- <span class="number">2</span>、<span class="keyword">sh</span> xxx.<span class="keyword">sh</span>或者bash xxx.<span class="keyword">sh</span></span><br><span class="line">- <span class="number">3</span>、<span class="keyword">source</span> xxx.<span class="keyword">sh</span>或者. xxx.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
 <h5 id="xxx-sh或者path-xxx-sh"><a href="#xxx-sh或者path-xxx-sh" class="headerlink" title="./xxx.sh或者path/xxx.sh"></a>./xxx.sh或者path/xxx.sh</h5><p>指在当前路径下执行脚本（脚本需要有执行权限），需要将脚本文件的权限改为可执行。然后使用相对路径或者绝对路径执行脚本。</p>
 <h5 id="sh-xxx-sh或者bash-xxx-sh"><a href="#sh-xxx-sh或者bash-xxx-sh" class="headerlink" title="sh xxx.sh或者bash xxx.sh"></a>sh xxx.sh或者bash xxx.sh</h5><p>这是当前脚本文件本身没有可执行权限（即文件权限属性x位为-号）时常用的方法，或者脚本文件开头没有指定解释器时需要使用的方法。</p>
-<h5 id="source-xxx-sh或者-xxx-sh"><a href="#source-xxx-sh或者-xxx-sh" class="headerlink" title="source xxx.sh或者. xxx.sh"></a>source xxx.sh或者. xxx.sh</h5><p>source或者“.”命令的功能是读取脚本并执行脚本，即在当前Shell中执行source或者“.”加载并执行相关脚本文件的命令及语句，而不是产生一个子Shell来执行文件中的命令。例如新建一个sh文件如下，不赋予可执行权限：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str="hello";</span><br><span class="line">echo $str;</span><br><span class="line">echo 'world';</span><br></pre></td></tr></table></figure></p>
+<h5 id="source-xxx-sh或者-xxx-sh"><a href="#source-xxx-sh或者-xxx-sh" class="headerlink" title="source xxx.sh或者. xxx.sh"></a>source xxx.sh或者. xxx.sh</h5><p>source或者“.”命令的功能是读取脚本并执行脚本，即在当前Shell中执行source或者“.”加载并执行相关脚本文件的命令及语句，而不是产生一个子Shell来执行文件中的命令。例如新建一个sh文件如下，不赋予可执行权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$str</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'world'</span>;</span><br></pre></td></tr></table></figure></p>
 <p>第三种方式执行过后shell打印hello和world，当我们在shell中继续输入<code>echo $str</code>依旧会输出hello。而第一种方式无法执行，第二种方式可以执行，继续输入结果为空。</p>
 <h1 id="Shell-Script的变量"><a href="#Shell-Script的变量" class="headerlink" title="Shell Script的变量"></a>Shell Script的变量</h1><p>Shell中的普通变量赋值的时候等号两边不能有空格，否则Shell会把变量作为命令处理。在使用定义过变量的时候一般在变量名前加上$符号。如声明一个字符串变量：<code>name=&#39;hello&#39;</code>若需要将变量与其他字符分隔开可以使用花括号如：<code>echo &quot;${name}world&quot;</code>将输出helloworld。</p>
 <h5 id="单引号和双引号包围变量的区别"><a href="#单引号和双引号包围变量的区别" class="headerlink" title="单引号和双引号包围变量的区别"></a>单引号和双引号包围变量的区别</h5><ul>
@@ -374,34 +396,34 @@
 <li><code>$n</code> n表示正整数，表示参数。</li>
 </ul>
 <h1 id="Shell-Script的基本语法"><a href="#Shell-Script的基本语法" class="headerlink" title="Shell Script的基本语法"></a>Shell Script的基本语法</h1><h5 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h5><p><code>if [ ] ; then …  fi</code><br><code>if [ ] ; then … elif [ ] ; then … else  fi</code></p>
-<p>Shell Script中的程序块一般是以反写作为结束，判断语句if后面以中括号包围判断条件，<strong> 中括号两端必须要有空格，条件运算符两端也必须要有空格 </strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [ "$1" == "n" ] ; then</span><br><span class="line">echo -e "you choose no!"</span><br><span class="line">elif [ "$1" == "y" ] ; then</span><br><span class="line">echo -e "you choose yes!"</span><br><span class="line">else</span><br><span class="line">echo -e "error char!"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>Shell Script中的程序块一般是以反写作为结束，判断语句if后面以中括号包围判断条件，<strong> 中括号两端必须要有空格，条件运算符两端也必须要有空格 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"n"</span> ] ; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"you choose no!"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"y"</span> ] ; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"you choose yes!"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"error char!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
 <h5 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h5><p><code>case … in</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">case $1 in</span><br><span class="line">"yes")</span><br><span class="line">echo -e "case yes!"</span><br><span class="line">;;</span><br><span class="line">"no")</span><br><span class="line">echo -e "case no!"</span><br><span class="line">;;</span><br><span class="line">"*")</span><br><span class="line">echo -e "case other!"</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line"><span class="string">"yes"</span>)</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"case yes!"</span></span><br><span class="line">;;</span><br><span class="line"><span class="string">"no"</span>)</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"case no!"</span></span><br><span class="line">;;</span><br><span class="line"><span class="string">"*"</span>)</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"case other!"</span></span><br><span class="line">;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
 <h5 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h5><p><code>until [] do … done</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">until [ "$1" == "yes" ]</span><br><span class="line">do</span><br><span class="line">echo "print some string"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">until [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"yes"</span> ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"print some string"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p><code>while[] do … done</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while [ "$1" == "yes" ]</span><br><span class="line">do</span><br><span class="line">echo "print some string"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"yes"</span> ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"print some string"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p><code>for  var  in …  do … done</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for $1 in "yes" "ok" "right"</span><br><span class="line">do</span><br><span class="line">echo -e "you choose right!"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="variable">$1</span> <span class="keyword">in</span> <span class="string">"yes"</span> <span class="string">"ok"</span> <span class="string">"right"</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"you choose right!"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p><code>for （（… ; … ; …）） do … done</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(( i=1; i&lt;10; i=i+1))</span><br><span class="line">do</span><br><span class="line">echo -e "the num is $i"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<h5 id="函数写法"><a href="#函数写法" class="headerlink" title="函数写法"></a>函数写法</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function puts()&#123;</span><br><span class="line">echo -e "the function is puts!"</span><br><span class="line">echo -e "haha"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(( i=1; i&lt;10; i=i+1))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"the num is <span class="variable">$i</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h5 id="函数写法"><a href="#函数写法" class="headerlink" title="函数写法"></a>函数写法</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">puts</span></span>()&#123;</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"the function is puts!"</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"haha"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>函数声明必须写在脚本的顶部，函数可以有参数但是不用在括号中声明，使用时直接 <code>函数名</code>+<code>空格</code>+<code>参数</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function putsName()&#123;</span><br><span class="line">echo -e "the number of args is $#"</span><br><span class="line">echo -e "the name is $1"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo -e "The script begin!"</span><br><span class="line">read -p "please set your name" NAME</span><br><span class="line">putsName $NAME</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">putsName</span></span>()&#123;</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"the number of args is <span class="variable">$#</span>"</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"the name is <span class="variable">$1</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"The script begin!"</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"please set your name"</span> NAME</span><br><span class="line">putsName <span class="variable">$NAME</span></span><br></pre></td></tr></table></figure>
 <h5 id="标准输入"><a href="#标准输入" class="headerlink" title="标准输入"></a>标准输入</h5><p>read命令接收标准输入，或其他文件描述符的输入，共有-a, -d, -e, -n, -p, -r, -t, 和 -s八个选项。</p>
 <ul>
 <li>-a ：将内容读入到数组中</li>
 <li>-d ：表示delimiter，即定界符，一般情况下是以IFS为参数的间隔，但是通过-d，我们可以定义一直读到出现执行的字符位置。例如read –d madfds value，读到有m的字符的时候就不在继续向后读，例如输入为 hello m，有效值为“hello”，请注意m前面的空格等会被删除。这种方式可以输入多个字符串，例如定义“.”作为结符号等等。</li>
 <li>-n ：用于限定最多可以有多少字符可以作为有效读入。如读取五个字符</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read -n 5 word</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">read</span> -n 5 word</span><br></pre></td></tr></table></figure>
 <ul>
 <li>-p ：用于给出输入提示</li>
 <li>-r ：在参数输入中，我们可以使用’/’表示没有输入完，换行继续输入，如果我们需要行最后的’/’作为有效的字符，可以通过-r来进行。此外在输入字符中，我们希望/n这类特殊字符生效，也应采用-r选项。</li>
 <li>-t ：用于表示等待输入的时间，单位为秒，等待时间超过，将继续执行后面的脚本，注意不作为null输入，参数将保留原有的值。</li>
 <li>读文件 ：最常用的方法是对文件使用cat命令并通过管道将结果直接传送给包含read命令的 while命令。</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">count=1    //赋值语句，不加空格</span><br><span class="line">cat test | while read line        //cat 命令的输出作为read命令的输入,read读到的值放在line中</span><br><span class="line">do</span><br><span class="line">	echo "Line $count:$line"</span><br><span class="line">	count=$[ $count + 1 ]          //注意中括号中的空格。 </span><br><span class="line">	done</span><br><span class="line">echo "finish"</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">count=1    //赋值语句，不加空格</span><br><span class="line">cat <span class="built_in">test</span> | <span class="keyword">while</span> <span class="built_in">read</span> line        //cat 命令的输出作为<span class="built_in">read</span>命令的输入,<span class="built_in">read</span>读到的值放在line中</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Line <span class="variable">$count</span>:<span class="variable">$line</span>"</span></span><br><span class="line">	count=$[ <span class="variable">$count</span> + 1 ]          //注意中括号中的空格。 </span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"finish"</span></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Shell很强大也很方便，蜗壳真的强！</p>
 
       
@@ -527,7 +549,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
