@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon96.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snail_32px_1214917_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon96.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="SnailZBlog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="摘要又是一篇乘凉的文章，看到钓叟的博客学习了一下，重新手打了一遍。钓叟种树我乘凉，以前用shell都很暴力，这回好好总结一波。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fundamental1">
+<meta property="og:url" content="http://yoursite.com/2018/07/30/fundamental1/index.html">
+<meta property="og:site_name" content="SnailZBlog">
+<meta property="og:description" content="摘要又是一篇乘凉的文章，看到钓叟的博客学习了一下，重新手打了一遍。钓叟种树我乘凉，以前用shell都很暴力，这回好好总结一波。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-30T04:54:10.524Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="fundamental1">
+<meta name="twitter:description" content="摘要又是一篇乘凉的文章，看到钓叟的博客学习了一下，重新手打了一遍。钓叟种树我乘凉，以前用shell都很暴力，这回好好总结一波。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/30/fundamental1/"/>
+
+
+
+
+
+  <title>fundamental1 | SnailZBlog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7ac869bdb02011bb322f385c1d86f3f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SnailZBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/30/fundamental1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SnailZ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SnailZBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">fundamental1</h1>
+        
+
+        <div class="post-meta">
+		  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T12:53:32+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,504
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>又是一篇乘凉的文章，看到<a href="https://liaoshichao.com/%E8%84%9A%E6%9C%AC/2015/07/13/Shell-Script-%E5%9F%BA%E6%9C%AC%E5%86%99%E6%B3%95/" target="_blank" rel="noopener">钓叟的博客</a>学习了一下，重新手打了一遍。钓叟种树我乘凉，以前用shell都很暴力，这回好好总结一波。<br><a id="more"></a></p>
+<h1 id="Shell的分类及Shell-Script"><a href="#Shell的分类及Shell-Script" class="headerlink" title="Shell的分类及Shell Script"></a>Shell的分类及Shell Script</h1><p>Shell的种类有<code>ksh</code>,<code>csh</code>,<code>zch</code>等，Linux默认bash这个shell，Shell Script就是依托Shell程序，靠Shell来解释执行的脚本。</p>
+<h1 id="Shell-Script执行的三种方式"><a href="#Shell-Script执行的三种方式" class="headerlink" title="Shell Script执行的三种方式"></a>Shell Script执行的三种方式</h1><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- <span class="number">1</span>、./xxx.<span class="keyword">sh</span>或者path/xxx.<span class="keyword">sh</span></span><br><span class="line">- <span class="number">2</span>、<span class="keyword">sh</span> xxx.<span class="keyword">sh</span>或者bash xxx.<span class="keyword">sh</span></span><br><span class="line">- <span class="number">3</span>、<span class="keyword">source</span> xxx.<span class="keyword">sh</span>或者. xxx.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<h5 id="xxx-sh或者path-xxx-sh"><a href="#xxx-sh或者path-xxx-sh" class="headerlink" title="./xxx.sh或者path/xxx.sh"></a>./xxx.sh或者path/xxx.sh</h5><p>指在当前路径下执行脚本（脚本需要有执行权限），需要将脚本文件的权限改为可执行。然后使用相对路径或者绝对路径执行脚本。</p>
+<h5 id="sh-xxx-sh或者bash-xxx-sh"><a href="#sh-xxx-sh或者bash-xxx-sh" class="headerlink" title="sh xxx.sh或者bash xxx.sh"></a>sh xxx.sh或者bash xxx.sh</h5><p>这是当前脚本文件本身没有可执行权限（即文件权限属性x位为-号）时常用的方法，或者脚本文件开头没有指定解释器时需要使用的方法。</p>
+<h5 id="source-xxx-sh或者-xxx-sh"><a href="#source-xxx-sh或者-xxx-sh" class="headerlink" title="source xxx.sh或者. xxx.sh"></a>source xxx.sh或者. xxx.sh</h5><p>source或者“.”命令的功能是读取脚本并执行脚本，即在当前Shell中执行source或者“.”加载并执行相关脚本文件的命令及语句，而不是产生一个子Shell来执行文件中的命令。例如新建一个sh文件如下，不赋予可执行权限：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str="hello";</span><br><span class="line">echo $str;</span><br><span class="line">echo 'world';</span><br></pre></td></tr></table></figure></p>
+<p>第三种方式执行过后shell打印hello和world，当我们在shell中继续输入<code>echo $str</code>依旧会输出hello。而第一种方式无法执行，第二种方式可以执行，继续输入结果为空。</p>
+<h1 id="Shell-Script的变量"><a href="#Shell-Script的变量" class="headerlink" title="Shell Script的变量"></a>Shell Script的变量</h1><p>Shell中的普通变量赋值的时候等号两边不能有空格，否则Shell会把变量作为命令处理。在使用定义过变量的时候一般在变量名前加上$符号。如声明一个字符串变量：<code>name=&#39;hello&#39;</code>若需要将变量与其他字符分隔开可以使用花括号如：<code>echo &quot;${name}world&quot;</code>将输出helloworld。</p>
+<h5 id="单引号和双引号包围变量的区别"><a href="#单引号和双引号包围变量的区别" class="headerlink" title="单引号和双引号包围变量的区别"></a>单引号和双引号包围变量的区别</h5><ul>
+<li>单引号包围变量：单引号包围的范围里面是什么，输出就是什么，不管内容是否有命令或者变量，这种方式比较适合定义显示纯字符串的情况。</li>
+<li>双引号包围变量：输出时会先解析里面的变量和命令，这种方式适合字符串中带有变量和命令并且想将其解析后再输出的情况。</li>
+</ul>
+<h5 id="特殊变量"><a href="#特殊变量" class="headerlink" title="特殊变量"></a>特殊变量</h5><ul>
+<li><code>$$</code> Shell本身的PID</li>
+<li><code>$!</code> Shell最后运行的后台process的PID</li>
+<li><code>$?</code> 当前Shell进程中执行的上一个命令的返回值，可以用来判断上一个命令执行是否出错</li>
+<li><code>$#</code> 表示执行参数的个数</li>
+<li><code>$0</code> 表示当前执行的脚本文件的名称</li>
+<li><code>$n</code> n表示正整数，表示参数。</li>
+</ul>
+<h1 id="Shell-Script的基本语法"><a href="#Shell-Script的基本语法" class="headerlink" title="Shell Script的基本语法"></a>Shell Script的基本语法</h1><h5 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h5><p><code>if [ ] ; then …  fi</code><br><code>if [ ] ; then … elif [ ] ; then … else  fi</code></p>
+<p>Shell Script中的程序块一般是以反写作为结束，判断语句if后面以中括号包围判断条件，<strong> 中括号两端必须要有空格，条件运算符两端也必须要有空格 </strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [ "$1" == "n" ] ; then</span><br><span class="line">echo -e "you choose no!"</span><br><span class="line">elif [ "$1" == "y" ] ; then</span><br><span class="line">echo -e "you choose yes!"</span><br><span class="line">else</span><br><span class="line">echo -e "error char!"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<h5 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h5><p><code>case … in</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">case $1 in</span><br><span class="line">"yes")</span><br><span class="line">echo -e "case yes!"</span><br><span class="line">;;</span><br><span class="line">"no")</span><br><span class="line">echo -e "case no!"</span><br><span class="line">;;</span><br><span class="line">"*")</span><br><span class="line">echo -e "case other!"</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<h5 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h5><p><code>until [] do … done</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">until [ "$1" == "yes" ]</span><br><span class="line">do</span><br><span class="line">echo "print some string"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><code>while[] do … done</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while [ "$1" == "yes" ]</span><br><span class="line">do</span><br><span class="line">echo "print some string"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><code>for  var  in …  do … done</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for $1 in "yes" "ok" "right"</span><br><span class="line">do</span><br><span class="line">echo -e "you choose right!"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><code>for （（… ; … ; …）） do … done</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(( i=1; i&lt;10; i=i+1))</span><br><span class="line">do</span><br><span class="line">echo -e "the num is $i"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h5 id="函数写法"><a href="#函数写法" class="headerlink" title="函数写法"></a>函数写法</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function puts()&#123;</span><br><span class="line">echo -e "the function is puts!"</span><br><span class="line">echo -e "haha"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数声明必须写在脚本的顶部，函数可以有参数但是不用在括号中声明，使用时直接 <code>函数名</code>+<code>空格</code>+<code>参数</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function putsName()&#123;</span><br><span class="line">echo -e "the number of args is $#"</span><br><span class="line">echo -e "the name is $1"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo -e "The script begin!"</span><br><span class="line">read -p "please set your name" NAME</span><br><span class="line">putsName $NAME</span><br></pre></td></tr></table></figure>
+<h5 id="标准输入"><a href="#标准输入" class="headerlink" title="标准输入"></a>标准输入</h5><p>read命令接收标准输入，或其他文件描述符的输入，共有-a, -d, -e, -n, -p, -r, -t, 和 -s八个选项。</p>
+<ul>
+<li>-a ：将内容读入到数组中</li>
+<li>-d ：表示delimiter，即定界符，一般情况下是以IFS为参数的间隔，但是通过-d，我们可以定义一直读到出现执行的字符位置。例如read –d madfds value，读到有m的字符的时候就不在继续向后读，例如输入为 hello m，有效值为“hello”，请注意m前面的空格等会被删除。这种方式可以输入多个字符串，例如定义“.”作为结符号等等。</li>
+<li>-n ：用于限定最多可以有多少字符可以作为有效读入。如读取五个字符</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read -n 5 word</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-p ：用于给出输入提示</li>
+<li>-r ：在参数输入中，我们可以使用’/’表示没有输入完，换行继续输入，如果我们需要行最后的’/’作为有效的字符，可以通过-r来进行。此外在输入字符中，我们希望/n这类特殊字符生效，也应采用-r选项。</li>
+<li>-t ：用于表示等待输入的时间，单位为秒，等待时间超过，将继续执行后面的脚本，注意不作为null输入，参数将保留原有的值。</li>
+<li>读文件 ：最常用的方法是对文件使用cat命令并通过管道将结果直接传送给包含read命令的 while命令。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">count=1    //赋值语句，不加空格</span><br><span class="line">cat test | while read line        //cat 命令的输出作为read命令的输入,read读到的值放在line中</span><br><span class="line">do</span><br><span class="line">	echo "Line $count:$line"</span><br><span class="line">	count=$[ $count + 1 ]          //注意中括号中的空格。 </span><br><span class="line">	done</span><br><span class="line">echo "finish"</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Shell很强大也很方便，蜗壳真的强！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/29/arithmetic3/" rel="next" title="蜗牛算法积累（三）----翻转数组">
+                <i class="fa fa-chevron-left"></i> 蜗牛算法积累（三）----翻转数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/author.png"
+                alt="SnailZ" />
+            
+              <p class="site-author-name" itemprop="name">SnailZ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zmwupgreat" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zmw961125@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/snailzhou" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/maoweizhou" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell的分类及Shell-Script"><span class="nav-number">2.</span> <span class="nav-text">Shell的分类及Shell Script</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Script执行的三种方式"><span class="nav-number">3.</span> <span class="nav-text">Shell Script执行的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#xxx-sh或者path-xxx-sh"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">./xxx.sh或者path/xxx.sh</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sh-xxx-sh或者bash-xxx-sh"><span class="nav-number">3.0.0.0.2.</span> <span class="nav-text">sh xxx.sh或者bash xxx.sh</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#source-xxx-sh或者-xxx-sh"><span class="nav-number">3.0.0.0.3.</span> <span class="nav-text">source xxx.sh或者. xxx.sh</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Script的变量"><span class="nav-number">4.</span> <span class="nav-text">Shell Script的变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单引号和双引号包围变量的区别"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">单引号和双引号包围变量的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊变量"><span class="nav-number">4.0.0.0.2.</span> <span class="nav-text">特殊变量</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Script的基本语法"><span class="nav-number">5.</span> <span class="nav-text">Shell Script的基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#判断语句"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">判断语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分支语句"><span class="nav-number">5.0.0.0.2.</span> <span class="nav-text">分支语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#循环语句"><span class="nav-number">5.0.0.0.3.</span> <span class="nav-text">循环语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数写法"><span class="nav-number">5.0.0.0.4.</span> <span class="nav-text">函数写法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标准输入"><span class="nav-number">5.0.0.0.5.</span> <span class="nav-text">标准输入</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SnailZ</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">9.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span><!-- 由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 --></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+
+<!--
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共9.5k字</span>
+</div>
+-->
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
