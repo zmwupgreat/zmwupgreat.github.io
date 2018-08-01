@@ -91,7 +91,7 @@
 <meta property="og:description" content="摘要作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pcnzo4nai.bkt.clouddn.com/face.jpg">
-<meta property="og:updated_time" content="2018-07-30T05:37:11.962Z">
+<meta property="og:updated_time" content="2018-08-01T07:32:02.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈一款优秀的人脸识别引擎">
 <meta name="twitter:description" content="摘要作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。">
@@ -379,8 +379,7 @@
       
 
       
-        <p><img src="http://pcnzo4nai.bkt.clouddn.com/face.jpg" alt="face"></p>
-<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。<br><a id="more"></a></p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>作为一个菜鸟，虹软公司的arcface的人脸识别引擎是我第一个接触到的人脸识别引擎，甚至使用这个引擎写了一个人脸考勤的小东西。<br><a id="more"></a></p>
 <h1 id="总的来说"><a href="#总的来说" class="headerlink" title="总的来说"></a>总的来说</h1><p>虹软真的是个大方的公司，我刚接触到它就是因为它把人脸识别引擎免费了。考虑到以前一个引擎的价格都是万元级的，这真的是一个令人吃惊的决定。而且arcface最初分为三个引擎detection，recognition，tracking。而且覆盖了windows，android和linux三个平台。做的很全，很小，整套引擎才30多兆。到现在arcface还增加了性别和年龄识别的引擎。总的来说很良心。</p>
 <h1 id="demo和资料"><a href="#demo和资料" class="headerlink" title="demo和资料"></a>demo和资料</h1><p>在虹软的官网上有个互助社区，上面各种大神在聊天，发帖回的也蛮快的。他们公司还总结了各个大神们做的有意思的demo的地址。我就试过最早出的那个windows平台上的demo，用mfc写的，虽然小但是很完整。把虹软的基础引擎的功能都很清晰简洁地展示出来了。我自己基于Qt写了个<a href="https://github.com/zmwupgreat/Qt_ArcFace_detection" target="_blank" rel="noopener">人脸考勤</a>，时间比较急，写的比较简单，使用到了detection和recognition引擎。</p>
 <p>arcface的文档写的还是很清楚的，它将标准库的数据类型都typedef了，都加了个M但是没什么影响。我主要用到的是detection和recognition两个引擎所以主要记录一下用这两个引擎的使用方法。</p>
@@ -421,7 +420,7 @@
 </ul>
 <h3 id="人脸特征比对"><a href="#人脸特征比对" class="headerlink" title="人脸特征比对"></a>人脸特征比对</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">MRESULT <span class="title">AFR_FSDK_FacePairMatching</span><span class="params">(MHandle hEngine,AFR_FSDK_FACEMODEL *reffeature,AFR_FSDK_FACEMODEL *probefeature,MFloat *pfSimilScore)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>人脸比对的方式最简单，将比对引擎的句柄和两个人脸的特征值传入该函数即可计算出两张人脸的相似度。若返回MOK则为比对成功。经过自己做的lfw的测试，该引擎的精确度大概在97%左右。同时该引擎能够较好的支持多线程的程序。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这是第一次写跟技术有关的博文感觉很刺激，废话很多，后面希望能不断进步。虹软关于人脸的引擎还有几个，若有时间再试试其他的引擎。在多线程的编程中还遇到一点未知的小问题，应该是我太菜才造成的问题，以后找到原因还会写一篇总结一下。就这样吧。蜗壳真的强。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这是第一次写跟技术有关的博文感觉很刺激，废话很多，后面希望能不断进步。虹软关于人脸的引擎还有几个，若有时间再试试其他的引擎。在多线程的编程中还遇到一点未知的小问题，应该是我太菜才造成的问题，以后找到原因还会写一篇总结一下。就这样吧。蜗壳真的强。<br><img src="http://pcnzo4nai.bkt.clouddn.com/face.jpg" alt="face"></p>
 
       
     </div>

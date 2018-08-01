@@ -4,8 +4,26 @@
 
     
   <url>
+    <loc>http://www.snailz.top/2018/07/23/talkaboutArcFace/</loc>
+    <lastmod>2018-08-01T07:32:02.724Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈一款优秀的人脸识别引擎</title>
+        <pubTime>2018-07-23T13:01:44.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="人脸识别" url="http://www.snailz.top/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.snailz.top/2018/07/30/share2/</loc>
-    <lastmod>2018-07-30T13:00:46.914Z</lastmod>
+    <lastmod>2018-08-01T07:31:44.526Z</lastmod>
     <data>
         <display>
         <title>蜗牛墙裂安利（二）</title>
@@ -15,6 +33,60 @@
            
              
               <breadCrumb title="墙裂安利" url="http://www.snailz.top/categories/%E5%A2%99%E8%A3%82%E5%AE%89%E5%88%A9/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.snailz.top/2018/07/28/share1/</loc>
+    <lastmod>2018-08-01T07:31:26.400Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛墙裂安利（一）</title>
+        <pubTime>2018-07-28T06:20:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="墙裂安利" url="http://www.snailz.top/categories/%E5%A2%99%E8%A3%82%E5%AE%89%E5%88%A9/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.snailz.top/2018/07/28/Fight-SecondWeek/</loc>
+    <lastmod>2018-08-01T07:30:56.490Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛移山第二周</title>
+        <pubTime>2018-07-28T03:48:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.snailz.top/2018/07/22/Fight-FirstWeek/</loc>
+    <lastmod>2018-08-01T07:30:31.696Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛移山第一周</title>
+        <pubTime>2018-07-22T07:27:37.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
           
         </display>
     </data>
@@ -39,78 +111,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://www.snailz.top/2018/07/28/share1/</loc>
-    <lastmod>2018-07-30T11:11:29.400Z</lastmod>
-    <data>
-        <display>
-        <title>蜗牛墙裂安利（一）</title>
-        <pubTime>2018-07-28T06:20:01.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="墙裂安利" url="http://www.snailz.top/categories/%E5%A2%99%E8%A3%82%E5%AE%89%E5%88%A9/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.snailz.top/2018/07/23/talkaboutArcFace/</loc>
-    <lastmod>2018-07-30T05:37:11.962Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈一款优秀的人脸识别引擎</title>
-        <pubTime>2018-07-23T13:01:44.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="人脸识别" url="http://www.snailz.top/categories/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.snailz.top/2018/07/28/Fight-SecondWeek/</loc>
-    <lastmod>2018-07-30T05:36:53.905Z</lastmod>
-    <data>
-        <display>
-        <title>蜗牛移山第二周</title>
-        <pubTime>2018-07-28T03:48:52.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.snailz.top/2018/07/22/Fight-FirstWeek/</loc>
-    <lastmod>2018-07-30T05:36:34.473Z</lastmod>
-    <data>
-        <display>
-        <title>蜗牛移山第一周</title>
-        <pubTime>2018-07-22T07:27:37.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://www.snailz.top/2018/07/22/%C2%96Hello-SnailZBlog/</loc>
