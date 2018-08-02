@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.snailz.top/2018/07/23/talkaboutArcFace/</loc>
-    <lastmod>2018-08-02T12:38:59.316Z</lastmod>
+    <lastmod>2018-08-02T12:47:17.992Z</lastmod>
     <data>
         <display>
         <title>谈谈一款优秀的人脸识别引擎</title>
@@ -22,44 +22,8 @@
 
     
   <url>
-    <loc>http://www.snailz.top/2018/07/22/%C2%96Hello-SnailZBlog/</loc>
-    <lastmod>2018-08-02T12:38:59.315Z</lastmod>
-    <data>
-        <display>
-        <title>Hello-SnailZBlog</title>
-        <pubTime>2018-07-22T03:33:30.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="关于Snail" url="http://www.snailz.top/categories/%E5%85%B3%E4%BA%8ESnail/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.snailz.top/2018/07/29/arithmetic3/</loc>
-    <lastmod>2018-08-02T12:38:59.314Z</lastmod>
-    <data>
-        <display>
-        <title>蜗牛算法积累（三）----翻转数组</title>
-        <pubTime>2018-07-29T04:48:01.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="面试算法积累" url="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.snailz.top/2018/07/30/share2/</loc>
-    <lastmod>2018-08-02T12:38:59.314Z</lastmod>
+    <lastmod>2018-08-02T12:47:08.882Z</lastmod>
     <data>
         <display>
         <title>蜗牛墙裂安利（二）</title>
@@ -77,7 +41,7 @@
     
   <url>
     <loc>http://www.snailz.top/2018/07/28/share1/</loc>
-    <lastmod>2018-08-02T12:38:59.313Z</lastmod>
+    <lastmod>2018-08-02T12:47:00.290Z</lastmod>
     <data>
         <display>
         <title>蜗牛墙裂安利（一）</title>
@@ -95,7 +59,7 @@
     
   <url>
     <loc>http://www.snailz.top/2018/07/29/people-explore/</loc>
-    <lastmod>2018-08-02T12:38:59.312Z</lastmod>
+    <lastmod>2018-08-02T12:46:51.468Z</lastmod>
     <data>
         <display>
         <title>人脸考勤设计思路</title>
@@ -112,26 +76,8 @@
 
     
   <url>
-    <loc>http://www.snailz.top/2018/07/28/arithmetic2/</loc>
-    <lastmod>2018-08-02T12:38:59.311Z</lastmod>
-    <data>
-        <display>
-        <title>蜗牛算法积累（二）----导弹拦截（求最长递减数列）</title>
-        <pubTime>2018-07-28T07:27:19.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="面试算法积累" url="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.snailz.top/2018/07/30/fundamental1/</loc>
-    <lastmod>2018-08-02T12:38:59.310Z</lastmod>
+    <lastmod>2018-08-02T12:46:41.567Z</lastmod>
     <data>
         <display>
         <title>蜗牛基础积累（一）----Shell Script的基本用法</title>
@@ -149,7 +95,7 @@
     
   <url>
     <loc>http://www.snailz.top/2018/07/26/firstarithmetic/</loc>
-    <lastmod>2018-08-02T12:38:59.309Z</lastmod>
+    <lastmod>2018-08-02T12:46:32.932Z</lastmod>
     <data>
         <display>
         <title>蜗牛算法积累（一）----单向不循环链表删除</title>
@@ -166,8 +112,26 @@
 
     
   <url>
+    <loc>http://www.snailz.top/2018/07/28/Fight-SecondWeek/</loc>
+    <lastmod>2018-08-02T12:46:22.853Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛移山第二周</title>
+        <pubTime>2018-07-28T03:48:52.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.snailz.top/2018/07/22/Fight-FirstWeek/</loc>
-    <lastmod>2018-08-02T12:38:59.309Z</lastmod>
+    <lastmod>2018-08-02T12:46:11.623Z</lastmod>
     <data>
         <display>
         <title>蜗牛移山第一周</title>
@@ -177,6 +141,60 @@
            
              
               <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.snailz.top/2018/07/29/arithmetic3/</loc>
+    <lastmod>2018-08-02T12:46:02.473Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛算法积累（三）----翻转数组</title>
+        <pubTime>2018-07-29T04:48:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="面试算法积累" url="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.snailz.top/2018/07/28/arithmetic2/</loc>
+    <lastmod>2018-08-02T12:45:53.727Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛算法积累（二）----导弹拦截（求最长递减数列）</title>
+        <pubTime>2018-07-28T07:27:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="面试算法积累" url="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.snailz.top/2018/07/22/%C2%96Hello-SnailZBlog/</loc>
+    <lastmod>2018-08-02T12:45:40.719Z</lastmod>
+    <data>
+        <display>
+        <title>Hello-SnailZBlog</title>
+        <pubTime>2018-07-22T03:33:30.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="关于Snail" url="http://www.snailz.top/categories/%E5%85%B3%E4%BA%8ESnail/"/>
           
         </display>
     </data>
@@ -213,24 +231,6 @@
            
              
               <breadCrumb title="面试算法积累" url="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.snailz.top/2018/07/28/Fight-SecondWeek/</loc>
-    <lastmod>2018-08-02T12:38:59.305Z</lastmod>
-    <data>
-        <display>
-        <title>蜗牛移山第二周</title>
-        <pubTime>2018-07-28T03:48:52.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
           
         </display>
     </data>
