@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.snailz.top/"/>
-  <updated>2018-08-01T07:31:44.526Z</updated>
+  <updated>2018-08-02T12:38:40.504Z</updated>
   <id>http://www.snailz.top/</id>
   
   <author>
@@ -15,6 +15,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蜗牛算法积累（五）----两数相加</title>
+    <link href="http://www.snailz.top/2018/08/02/arithmetic5/"/>
+    <id>http://www.snailz.top/2018/08/02/arithmetic5/</id>
+    <published>2018-08-02T12:31:12.000Z</published>
+    <updated>2018-08-02T12:38:40.504Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。</p><p>你可以假设除了数字 0 之外，这两个数字都不会以零开头。</p><p>示例：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：(<span class="number">2</span> -&gt; <span class="number">4</span> -&gt; <span class="number">3</span>) + (<span class="number">5</span> -&gt; <span class="number">6</span> -&gt; <span class="number">4</span>)</span><br><span class="line">输出：<span class="number">7</span> -&gt; <span class="number">0</span> -&gt; <span class="number">8</span></span><br><span class="line">原因：<span class="number">342</span> + <span class="number">465</span> = <span class="number">807</span></span><br></pre></td></tr></table></figure><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>第一次试了一下中等题，这道题的思路还是比较简单的，分析之后无非就需要三种情况</p><ol><li>两个数的长短不一致的情况</li><li>本位相加后有进位</li><li>进位是空节点<br>所以解题的过程是从头开始遍历链表，两个链表的数及进位相加取余作为本位的值，取商作为进位的值。当节点为空时，值用0代替。直到两个链表都为空。判断是否有进位，若有进位则添加进位节点。</li></ol><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode *result; </span><br><span class="line">        ListNode *head;</span><br><span class="line">        result = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        head = result;</span><br><span class="line">        <span class="keyword">int</span> add = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">NULL</span> || l2 != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> num = add;</span><br><span class="line">            <span class="keyword">if</span>(l1  == <span class="literal">NULL</span>)</span><br><span class="line">                num += <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                num += l1 -&gt; val;</span><br><span class="line">            <span class="keyword">if</span>(l2 == <span class="literal">NULL</span>)</span><br><span class="line">                num += <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                num += l2 -&gt; val;</span><br><span class="line">            add = num / <span class="number">10</span>;</span><br><span class="line">            result-&gt;next = <span class="keyword">new</span> ListNode(num % <span class="number">10</span>);</span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) l1 = l1-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) l2 = l2-&gt;next;</span><br><span class="line">            result = result-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(add != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result -&gt; next  = <span class="keyword">new</span> ListNode(add);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。&lt;/p&gt;
+&lt;p&gt;你可以假
+      
+    
+    </summary>
+    
+      <category term="面试算法积累" scheme="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>蜗牛算法积累（四）----罗马数字转整数</title>
+    <link href="http://www.snailz.top/2018/08/02/arithmetic4/"/>
+    <id>http://www.snailz.top/2018/08/02/arithmetic4/</id>
+    <published>2018-08-02T12:19:31.000Z</published>
+    <updated>2018-08-02T12:31:49.881Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>罗马数字包含以下七种字符：I， V， X， L，C，D 和 M。</p><table><thead><tr><th>字符</th><th style="text-align:center">数值</th></tr></thead><tbody><tr><td>I</td><td style="text-align:center">1</td></tr><tr><td>V</td><td style="text-align:center">5</td></tr><tr><td>X</td><td style="text-align:center">10</td></tr><tr><td>L</td><td style="text-align:center">50</td></tr><tr><td>C</td><td style="text-align:center">100</td></tr><tr><td>D</td><td style="text-align:center">500</td></tr><tr><td>M</td><td style="text-align:center">1000</td></tr></tbody></table><p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。<br>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p><ul><li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li><li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。</li><li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。<br>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。<a id="more"></a></li></ul><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>这道题的题目看起来很长，但是仔细分析一下发现思路特别简单。由于罗马数字中小的数字在大的数字右边，但是有特例。先忽略特例。我们从右向左遍历字符串。遇到对应的罗马数字的时候就可以将结果加上罗马数字对应的值。这个时候再考虑特例。当特例出现时，检查特例右边的罗马数字是什么。若是比特例大的值则减去特例，否则照常。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = s.size();</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = size - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">switch</span>(s[i])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'I'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(i == size - <span class="number">1</span>)</span><br><span class="line">                            num += <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(s[i+<span class="number">1</span>] == <span class="string">'V'</span> || s[i+<span class="number">1</span>] == <span class="string">'X'</span>)</span><br><span class="line">                            num -= <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            num += <span class="number">1</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'V'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">5</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'X'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(i == size - <span class="number">1</span>)</span><br><span class="line">                            num += <span class="number">10</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(s[i+<span class="number">1</span>] == <span class="string">'L'</span> || s[i+<span class="number">1</span>] == <span class="string">'C'</span>)</span><br><span class="line">                            num -= <span class="number">10</span>;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            num += <span class="number">10</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'L'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">50</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'C'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(i == size - <span class="number">1</span>)</span><br><span class="line">                            num += <span class="number">100</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(s[i+<span class="number">1</span>] == <span class="string">'D'</span> || s[i+<span class="number">1</span>] == <span class="string">'M'</span>)</span><br><span class="line">                            num -= <span class="number">100</span>;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            num += <span class="number">100</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'D'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">500</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'M'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">1000</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>罗马数字转整数的比较简单，但是整数转罗马数字的好像难一些，下次尝试一下，蜗壳真的强。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;罗马数字包含以下七种字符：I， V， X， L，C，D 和 M。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字符&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;数值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;V&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;500&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。&lt;br&gt;通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。&lt;/li&gt;
+&lt;li&gt;X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。&lt;/li&gt;
+&lt;li&gt;C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。&lt;br&gt;给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="面试算法积累" scheme="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>蜗牛墙裂安利（二）</title>
