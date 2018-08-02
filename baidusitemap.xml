@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://www.snailz.top/2018/08/02/arithmetic5/</loc>
+    <lastmod>2018-08-02T12:59:28.750Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛算法积累（五）----两数相加</title>
+        <pubTime>2018-08-02T12:31:12.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="面试算法积累" url="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.snailz.top/2018/07/23/talkaboutArcFace/</loc>
     <lastmod>2018-08-02T12:47:17.992Z</lastmod>
     <data>
@@ -195,24 +213,6 @@
            
              
               <breadCrumb title="关于Snail" url="http://www.snailz.top/categories/%E5%85%B3%E4%BA%8ESnail/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.snailz.top/2018/08/02/arithmetic5/</loc>
-    <lastmod>2018-08-02T12:38:59.308Z</lastmod>
-    <data>
-        <display>
-        <title>蜗牛算法积累（五）----两数相加</title>
-        <pubTime>2018-08-02T12:31:12.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="面试算法积累" url="http://www.snailz.top/categories/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
           
         </display>
     </data>
