@@ -85,14 +85,14 @@
 
 <meta name="description" content="摘要罗马数字包含以下七种字符：I， V， X， L，C，D 和 M。    字符 数值     I 1   V 5   X 10   L 50   C 100   D 500   M 1000    例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。通常情况下，罗马数字中小的数字在大的数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛算法积累（四）----罗马数字转整数">
-<meta property="og:url" content="http://www.snailz.top/2018/08/02/arithmetic4/index.html">
+<meta property="og:title" content="蜗牛算法积累（六）----整数转罗马数字">
+<meta property="og:url" content="http://www.snailz.top/2018/08/03/arithmetic6/index.html">
 <meta property="og:site_name" content="SnailZBlog">
 <meta property="og:description" content="摘要罗马数字包含以下七种字符：I， V， X， L，C，D 和 M。    字符 数值     I 1   V 5   X 10   L 50   C 100   D 500   M 1000    例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。通常情况下，罗马数字中小的数字在大的数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T12:38:59.306Z">
+<meta property="og:updated_time" content="2018-08-03T09:20:11.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜗牛算法积累（四）----罗马数字转整数">
+<meta name="twitter:title" content="蜗牛算法积累（六）----整数转罗马数字">
 <meta name="twitter:description" content="摘要罗马数字包含以下七种字符：I， V， X， L，C，D 和 M。    字符 数值     I 1   V 5   X 10   L 50   C 100   D 500   M 1000    例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。通常情况下，罗马数字中小的数字在大的数">
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://www.snailz.top/2018/08/02/arithmetic4/"/>
+  <link rel="canonical" href="http://www.snailz.top/2018/08/03/arithmetic6/"/>
 
 
 
 
 
-  <title>蜗牛算法积累（四）----罗马数字转整数 | SnailZBlog</title>
+  <title>蜗牛算法积累（六）----整数转罗马数字 | SnailZBlog</title>
   
 
 
@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.snailz.top/2018/08/02/arithmetic4/">
+    <link itemprop="mainEntityOfPage" href="http://www.snailz.top/2018/08/03/arithmetic6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SnailZ">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蜗牛算法积累（四）----罗马数字转整数</h1>
+          <h1 class="post-title" itemprop="name headline">蜗牛算法积累（六）----整数转罗马数字</h1>
         
 
         <div class="post-meta">
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-02T20:19:31+08:00">
-                2018-08-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T17:06:17+08:00">
+                2018-08-03
               </time>
             
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  601
+                  898
                 </span>
               
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -420,12 +420,13 @@
 <ul>
 <li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li>
 <li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。</li>
-<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。<br>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。<a id="more"></a>
+<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。<br>给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。<a id="more"></a>
 </li>
 </ul>
-<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>这道题的题目看起来很长，但是仔细分析一下发现思路特别简单。由于罗马数字中小的数字在大的数字右边，但是有特例。先忽略特例。我们从右向左遍历字符串。遇到对应的罗马数字的时候就可以将结果加上罗马数字对应的值。这个时候再考虑特例。当特例出现时，检查特例右边的罗马数字是什么。若是比特例大的值则减去特例，否则照常。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = s.size();</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = size - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">switch</span>(s[i])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'I'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(i == size - <span class="number">1</span>)</span><br><span class="line">                            num += <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(s[i+<span class="number">1</span>] == <span class="string">'V'</span> || s[i+<span class="number">1</span>] == <span class="string">'X'</span>)</span><br><span class="line">                            num -= <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            num += <span class="number">1</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'V'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">5</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'X'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(i == size - <span class="number">1</span>)</span><br><span class="line">                            num += <span class="number">10</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(s[i+<span class="number">1</span>] == <span class="string">'L'</span> || s[i+<span class="number">1</span>] == <span class="string">'C'</span>)</span><br><span class="line">                            num -= <span class="number">10</span>;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            num += <span class="number">10</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'L'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">50</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'C'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(i == size - <span class="number">1</span>)</span><br><span class="line">                            num += <span class="number">100</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(s[i+<span class="number">1</span>] == <span class="string">'D'</span> || s[i+<span class="number">1</span>] == <span class="string">'M'</span>)</span><br><span class="line">                            num -= <span class="number">100</span>;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            num += <span class="number">100</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'D'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">500</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'M'</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                            num += <span class="number">1000</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>罗马数字转整数的比较简单，但是整数转罗马数字的好像难一些，下次尝试一下，蜗壳真的强。</p>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>这题就是上次那题（在算法积累4里）的变形，上次把罗马数字转整数，这回是整数转罗马数字。上次那题是简单等级的，这回是中等的。这回这题第一次一次通过。吓得我赶紧查了一下，发现思路是对的。但是比较复杂一点。也查到了简单的做法。</p>
+<h5 id="复杂的思路"><a href="#复杂的思路" class="headerlink" title="复杂的思路"></a>复杂的思路</h5><p>我的思路主要是先将整数按位分割开来，由于只有4位比较好办。每一位都对1，5，10进行赋值（因为每一位上的1，5，10的表示不一样，其他都是根据这三个数扩展的）。然后再将每一位上的数进行分类表示。比较暴力的做法。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">intToRoman</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(num &lt; <span class="number">1</span> || num &gt; <span class="number">3999</span>)</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;nums;</span><br><span class="line">        <span class="keyword">while</span>(num != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            nums.push_back(num % <span class="number">10</span>);</span><br><span class="line">            num = num / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">string</span> result;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> one,five,ten;</span><br><span class="line">            <span class="keyword">switch</span>(i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        one = <span class="string">"I"</span>;</span><br><span class="line">                        five = <span class="string">"V"</span>;</span><br><span class="line">                        ten = <span class="string">"X"</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        one = <span class="string">"X"</span>;</span><br><span class="line">                        five = <span class="string">"L"</span>;</span><br><span class="line">                        ten = <span class="string">"C"</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        one = <span class="string">"C"</span>;</span><br><span class="line">                        five = <span class="string">"D"</span>;</span><br><span class="line">                        ten = <span class="string">"M"</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        one = <span class="string">"M"</span>;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">switch</span>(nums.at(i))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.at(i); j++)</span><br><span class="line">                            result += one;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        result += one;</span><br><span class="line">                        result += five;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        result += five;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">                <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        result += five;</span><br><span class="line">                        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; nums.at(i) - <span class="number">5</span>; k++)</span><br><span class="line">                            result += one;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">                    &#123;</span><br><span class="line">                        result += one;</span><br><span class="line">                        result += ten;</span><br><span class="line">                    &#125;<span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h5 id="比较巧妙的做法"><a href="#比较巧妙的做法" class="headerlink" title="比较巧妙的做法"></a>比较巧妙的做法</h5><p>把1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1的罗马数字的表示法列出来，因为这些数要么是特例，要么其他数是根据这些数扩展来的。输入的整数不断去减能够减的最大值。能减去一个最大值则结果加上一个最大值对应的罗马数字。巧妙得很。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">intToRoman</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; val&#123;<span class="number">1000</span>, <span class="number">900</span>, <span class="number">500</span>, <span class="number">400</span>, <span class="number">100</span>, <span class="number">90</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">10</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; str&#123;<span class="string">"M"</span>, <span class="string">"CM"</span>, <span class="string">"D"</span>, <span class="string">"CD"</span>, <span class="string">"C"</span>, <span class="string">"XC"</span>, <span class="string">"L"</span>, <span class="string">"XL"</span>, <span class="string">"X"</span>, <span class="string">"IX"</span>, <span class="string">"V"</span>, <span class="string">"IV"</span>, <span class="string">"I"</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; val.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">while</span> (num &gt;= val[i]) &#123;</span><br><span class="line">                num -= val[i];</span><br><span class="line">                res += str[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>但是第二种方法的时间复杂度比较高，不过思路很独特在这记录一下，还有一种时间复杂度为O（1）的奇葩的方法思路不是很高明就不写了。蜗壳真的强。</p>
 
       
     </div>
@@ -441,13 +442,13 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/08/02/arithmetic4/">蜗牛算法积累（四）----罗马数字转整数</a></p>
+  <p><span>本文标题:</span><a href="/2018/08/03/arithmetic6/">蜗牛算法积累（六）----整数转罗马数字</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SnailZ 的个人博客">SnailZ</a></p>
-  <p><span>发布时间:</span>2018年08月02日 - 20:08</p>
-  <p><span>最后更新:</span>2018年08月02日 - 20:08</p>
+  <p><span>发布时间:</span>2018年08月03日 - 17:08</p>
+  <p><span>最后更新:</span>2018年08月03日 - 17:08</p>
   <p><span>联系方式:</span>zmw961125@gmail.com</p>
-  <p><span>原始链接:</span><a href="/2018/08/02/arithmetic4/" title="蜗牛算法积累（四）----罗马数字转整数">http://www.snailz.top/2018/08/02/arithmetic4/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/08/02/arithmetic4/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2018/08/03/arithmetic6/" title="蜗牛算法积累（六）----整数转罗马数字">http://www.snailz.top/2018/08/03/arithmetic6/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/08/03/arithmetic6/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -484,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/30/share2/" rel="next" title="蜗牛墙裂安利（二）">
-                <i class="fa fa-chevron-left"></i> 蜗牛墙裂安利（二）
+              <a href="/2018/08/02/arithmetic5/" rel="next" title="蜗牛算法积累（五）----两数相加">
+                <i class="fa fa-chevron-left"></i> 蜗牛算法积累（五）----两数相加
               </a>
             
           </div>
@@ -493,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/02/arithmetic5/" rel="prev" title="蜗牛算法积累（五）----两数相加">
-                蜗牛算法积累（五）----两数相加 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -676,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#复杂的思路"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">复杂的思路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#比较巧妙的做法"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">比较巧妙的做法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
