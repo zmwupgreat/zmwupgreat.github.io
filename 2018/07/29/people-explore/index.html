@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="SnailZBlog">
 <meta property="og:description" content="摘要把上次花了几天时间写的人脸考勤系统的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T12:46:51.468Z">
+<meta property="og:updated_time" content="2018-08-04T02:30:01.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人脸考勤设计思路">
 <meta name="twitter:description" content="摘要把上次花了几天时间写的人脸考勤系统的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  970
+                  971
                 </span>
               
 
@@ -379,7 +379,7 @@
       
         <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>把上次花了几天时间写的<a href="https://github.com/zmwupgreat/Qt_ArcFace_detection" target="_blank" rel="noopener">人脸考勤系统</a>的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。<br><a id="more"></a></p>
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>用到了虹软的人脸识别引擎，Qt Creator，SQLite</p>
-<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><p>人脸考勤系统主要包括 大模块：</p>
+<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><p>人脸考勤系统主要包括七大模块：</p>
 <h5 id="主界面模块"><a href="#主界面模块" class="headerlink" title="主界面模块"></a>主界面模块</h5><p>主界面模块作为数据逻辑处理</p>
 <h5 id="人脸识别模块"><a href="#人脸识别模块" class="headerlink" title="人脸识别模块"></a>人脸识别模块</h5><p>人脸识别模块开辟独立线程，对于主界面传输过来的图像进行处理，检测，提取人脸特征，并将人脸特征保存在本地。</p>
 <h5 id="人脸检索模块"><a href="#人脸检索模块" class="headerlink" title="人脸检索模块"></a>人脸检索模块</h5><p>人脸检索模块开辟独立线程，并使用线程池管理多个子线程读取本地特征文件并与采集人脸特征进行比对，找到相似度最高的人脸图像并向主界面发送信号。</p>
@@ -421,7 +421,7 @@
   <p><span>本文标题:</span><a href="/2018/07/29/people-explore/">人脸考勤设计思路</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SnailZ 的个人博客">SnailZ</a></p>
   <p><span>发布时间:</span>2018年07月29日 - 10:07</p>
-  <p><span>最后更新:</span>2018年08月02日 - 20:08</p>
+  <p><span>最后更新:</span>2018年08月04日 - 10:08</p>
   <p><span>联系方式:</span>zmw961125@gmail.com</p>
   <p><span>原始链接:</span><a href="/2018/07/29/people-explore/" title="人脸考勤设计思路">http://www.snailz.top/2018/07/29/people-explore/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/07/29/people-explore/"  aria-label="复制成功！"></i></span>
@@ -554,7 +554,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -688,7 +688,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.4k</span>
+    <span title="Site words total count">13.5k</span>
   
 </div>
 
@@ -711,7 +711,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共13.4k字</span>
+  <span class="post-count">博客全站共13.5k字</span>
 </div>
 -->
         

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.snailz.top/"/>
-  <updated>2018-08-04T01:56:21.884Z</updated>
+  <updated>2018-08-04T02:49:33.457Z</updated>
   <id>http://www.snailz.top/</id>
   
   <author>
@@ -17,20 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化</title>
+    <link href="http://www.snailz.top/2018/08/04/fundamental2/"/>
+    <id>http://www.snailz.top/2018/08/04/fundamental2/</id>
+    <published>2018-08-04T02:02:02.000Z</published>
+    <updated>2018-08-04T02:49:33.457Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。<br><a id="more"></a></p><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>&lt;未完待续&gt;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="基础积累" scheme="http://www.snailz.top/categories/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>蜗牛移山第三周</title>
     <link href="http://www.snailz.top/2018/08/04/Fight-3Week/"/>
     <id>http://www.snailz.top/2018/08/04/Fight-3Week/</id>
     <published>2018-08-04T01:40:52.000Z</published>
-    <updated>2018-08-04T01:56:21.884Z</updated>
+    <updated>2018-08-04T02:42:33.667Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>第三周了，感觉时间过的还是很快的。天气也越来越热了，但是要忍受早上图书馆冷的要死的空调，晚上要忍受教研室没有空调的闷热空气。成都的天贼TM神奇，原本还是晴空万里，一眨眼就开始电闪雷鸣。</p><h1 id="复习进度"><a href="#复习进度" class="headerlink" title="复习进度"></a>复习进度</h1><p>这周概率论收了尾，开始我最怕的线性代数的复习。但是线性代数前面部分感觉好像还是比较简单的，没有以前学起来那么吃力。把前面部分过了一遍。这周有个惊奇的发现，好像英语阅读有一丝丝的提高了。说明复习有点效果了，找回了一些做阅读的感觉了。下周把线性代数收尾了，线性代数的后面几章应该是全书最难的，当年虐的我体无完肤。把课本都过了一遍就要开始刷红宝书了。</p><h1 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h1><p>这周运动还在坚持，跑了一次天府广场，另一次跑周边的地方，总的加起来从才开始复习到现在跑了几十公里了吧，感觉每次跑完步都很舒服，身心愉悦。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这周偷懒的时候还刷了点LeetCode的题，感觉很有趣。在身边人面试的时候，感觉面试真的好难啊，我要把我听到的题都做一遍总结一下。这周学习的时候确实有时容易走神，下周继续加油吧，要把注意力不集中的问题解决一下了。哈哈，看知乎里胡适在日记里提醒自己不能再打牌了，要好好学习，然而控制不住自己。蒋介石在日记里提醒自己不能再贪恋女色了，但是控制不住自己。我在这说要解决注意力不集中问题可能也控制不住呀。反正就得对自己严一点吧。确实到现在我还是没有紧张的感觉，让我很慌。<br><img src="http://pcnzo4nai.bkt.clouddn.com/168323.jpg" alt="star"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>第三周了，感觉时间过的还是很快的。天气也越来越热了，但是要忍受早上图书馆冷的要死的空调，晚上要忍受教研室没有空调的闷热空气。成都的天贼TM神奇，原本还是晴空万里，一眨眼就开始电闪雷鸣。<br><a id="more"></a></p><h1 id="复习进度"><a href="#复习进度" class="headerlink" title="复习进度"></a>复习进度</h1><p>这周概率论收了尾，开始我最怕的线性代数的复习。但是线性代数前面部分感觉好像还是比较简单的，没有以前学起来那么吃力。把前面部分过了一遍。这周有个惊奇的发现，好像英语阅读有一丝丝的提高了。说明复习有点效果了，找回了一些做阅读的感觉了。下周把线性代数收尾了，线性代数的后面几章应该是全书最难的，当年虐的我体无完肤。把课本都过了一遍就要开始刷红宝书了。</p><h1 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h1><p>这周运动还在坚持，跑了一次天府广场，另一次跑周边的地方，总的加起来从才开始复习到现在跑了几十公里了吧，感觉每次跑完步都很舒服，身心愉悦。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这周偷懒的时候还刷了点LeetCode的题，感觉很有趣。在身边人面试的时候，感觉面试真的好难啊，我要把我听到的题都做一遍总结一下。这周学习的时候确实有时容易走神，下周继续加油吧，要把注意力不集中的问题解决一下了。哈哈，看知乎里胡适在日记里提醒自己不能再打牌了，要好好学习，然而控制不住自己。蒋介石在日记里提醒自己不能再贪恋女色了，但是控制不住自己。我在这说要解决注意力不集中问题可能也控制不住呀。反正就得对自己严一点吧。确实到现在我还是没有紧张的感觉，让我很慌。<br><img src="http://pcnzo4nai.bkt.clouddn.com/168323.jpg" alt="star"></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;第三周了，感觉时间过的还是很快的。天气也越来越热了，但是要忍受早上图书馆冷的要死的空调，晚上要忍受教研室没有空调的闷热空气。成都的天贼TM神
-      
+      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;第三周了，感觉时间过的还是很快的。天气也越来越热了，但是要忍受早上图书馆冷的要死的空调，晚上要忍受教研室没有空调的闷热空气。成都的天贼TM神奇，原本还是晴空万里，一眨眼就开始电闪雷鸣。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -253,9 +270,9 @@
     <link href="http://www.snailz.top/2018/07/29/people-explore/"/>
     <id>http://www.snailz.top/2018/07/29/people-explore/</id>
     <published>2018-07-29T02:05:22.000Z</published>
-    <updated>2018-08-02T12:46:51.468Z</updated>
+    <updated>2018-08-04T02:30:01.786Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>把上次花了几天时间写的<a href="https://github.com/zmwupgreat/Qt_ArcFace_detection" target="_blank" rel="noopener">人脸考勤系统</a>的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。<br><a id="more"></a></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>用到了虹软的人脸识别引擎，Qt Creator，SQLite</p><h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><p>人脸考勤系统主要包括 大模块：</p><h5 id="主界面模块"><a href="#主界面模块" class="headerlink" title="主界面模块"></a>主界面模块</h5><p>主界面模块作为数据逻辑处理</p><h5 id="人脸识别模块"><a href="#人脸识别模块" class="headerlink" title="人脸识别模块"></a>人脸识别模块</h5><p>人脸识别模块开辟独立线程，对于主界面传输过来的图像进行处理，检测，提取人脸特征，并将人脸特征保存在本地。</p><h5 id="人脸检索模块"><a href="#人脸检索模块" class="headerlink" title="人脸检索模块"></a>人脸检索模块</h5><p>人脸检索模块开辟独立线程，并使用线程池管理多个子线程读取本地特征文件并与采集人脸特征进行比对，找到相似度最高的人脸图像并向主界面发送信号。</p><h5 id="人员信息数据模块"><a href="#人员信息数据模块" class="headerlink" title="人员信息数据模块"></a>人员信息数据模块</h5><p>人员信息显示模块，</p><h5 id="签到数据模块"><a href="#签到数据模块" class="headerlink" title="签到数据模块"></a>签到数据模块</h5><p>人员签到信息显示模块</p><h5 id="数据库模块"><a href="#数据库模块" class="headerlink" title="数据库模块"></a>数据库模块</h5><p>该系统维护一个数据库，包括两个表，人员信息表和签到数据表，数据库模块主要是对两个表的增删改查的接口的实现。</p><h5 id="摄像头模块"><a href="#摄像头模块" class="headerlink" title="摄像头模块"></a>摄像头模块</h5><p>摄像头模块将摄像头采集图像进行缩放处理后放置主界面进行显示，并在需要进行图像采集时保存当前帧图像。</p><h1 id="流程设计"><a href="#流程设计" class="headerlink" title="流程设计"></a>流程设计</h1><p>人脸考勤系统的使用流程大概是这样的：</p><ul><li>1、用户点击录入按钮进行人员的信息录入，录入过程中包括，提取人脸照片特征值，将人脸特征及采集照片保存在本地。同时将地址与人员信息写入数据库。</li><li>2、在人员信息管理模块中可以查找对应人员的信息及采集图像。</li><li>3、点击一键签到，触发人脸检索模块的人脸检索功能，将本地的人脸特征进行遍历比对，找到相似度最高的人脸信息进行显示。</li><li>4、在签到信息管理模块中可以找到人员签到的详细情况。</li></ul><h5 id="信息录入"><a href="#信息录入" class="headerlink" title="信息录入"></a>信息录入</h5><p>从摄像头模块获取一帧的图像，在弹出的窗口中用户输入相关的信息，窗口检查信息是否填写完整，完整则将所填信息存入一个结构体中。触发人脸识别模块的开始，在线程中对采集的人脸图像进行人脸检测，特征提取，人脸截取。最后由主界面显示人员信息并存入数据库。</p><h5 id="一键签到"><a href="#一键签到" class="headerlink" title="一键签到"></a>一键签到</h5><p>从摄像头模块获取一帧图像，在线程中开辟4个子线程由线程池管理，4个子线程读取本地特征数据，与采集的人脸进行比对，找到相似度最高人脸进行信息显示并存入数据库。</p><h1 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h1><ul><li>1、人脸识别模块可与人脸检索模块进行整合，避免代码的冗余。</li><li>2、将人脸特征值保存在本地是因为特征长度太长，若读入内存会造成内存不足的情况，但是从磁盘中读取速度过慢，要找到一个能够平衡的方法，提高检索速度。</li><li>3、线程池中管理的内存在每次比对时都要对人脸识别引擎进行初始化和销毁引擎造成检索速度过慢。</li><li>4、没有理解线程管理的方法，仅使用简单的线程池来管理，使得线程的使用受到限制，效率过低。</li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>抽空对多线程管理进行复习，改进线程管理的部分。提高人脸检索的效率。蜗壳真的强。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>把上次花了几天时间写的<a href="https://github.com/zmwupgreat/Qt_ArcFace_detection" target="_blank" rel="noopener">人脸考勤系统</a>的设计思路总结一下，顺便总结一下不足之处。第一次独立完成一个小程序的设计还是蛮有成就感的。<br><a id="more"></a></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>用到了虹软的人脸识别引擎，Qt Creator，SQLite</p><h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><p>人脸考勤系统主要包括七大模块：</p><h5 id="主界面模块"><a href="#主界面模块" class="headerlink" title="主界面模块"></a>主界面模块</h5><p>主界面模块作为数据逻辑处理</p><h5 id="人脸识别模块"><a href="#人脸识别模块" class="headerlink" title="人脸识别模块"></a>人脸识别模块</h5><p>人脸识别模块开辟独立线程，对于主界面传输过来的图像进行处理，检测，提取人脸特征，并将人脸特征保存在本地。</p><h5 id="人脸检索模块"><a href="#人脸检索模块" class="headerlink" title="人脸检索模块"></a>人脸检索模块</h5><p>人脸检索模块开辟独立线程，并使用线程池管理多个子线程读取本地特征文件并与采集人脸特征进行比对，找到相似度最高的人脸图像并向主界面发送信号。</p><h5 id="人员信息数据模块"><a href="#人员信息数据模块" class="headerlink" title="人员信息数据模块"></a>人员信息数据模块</h5><p>人员信息显示模块，</p><h5 id="签到数据模块"><a href="#签到数据模块" class="headerlink" title="签到数据模块"></a>签到数据模块</h5><p>人员签到信息显示模块</p><h5 id="数据库模块"><a href="#数据库模块" class="headerlink" title="数据库模块"></a>数据库模块</h5><p>该系统维护一个数据库，包括两个表，人员信息表和签到数据表，数据库模块主要是对两个表的增删改查的接口的实现。</p><h5 id="摄像头模块"><a href="#摄像头模块" class="headerlink" title="摄像头模块"></a>摄像头模块</h5><p>摄像头模块将摄像头采集图像进行缩放处理后放置主界面进行显示，并在需要进行图像采集时保存当前帧图像。</p><h1 id="流程设计"><a href="#流程设计" class="headerlink" title="流程设计"></a>流程设计</h1><p>人脸考勤系统的使用流程大概是这样的：</p><ul><li>1、用户点击录入按钮进行人员的信息录入，录入过程中包括，提取人脸照片特征值，将人脸特征及采集照片保存在本地。同时将地址与人员信息写入数据库。</li><li>2、在人员信息管理模块中可以查找对应人员的信息及采集图像。</li><li>3、点击一键签到，触发人脸检索模块的人脸检索功能，将本地的人脸特征进行遍历比对，找到相似度最高的人脸信息进行显示。</li><li>4、在签到信息管理模块中可以找到人员签到的详细情况。</li></ul><h5 id="信息录入"><a href="#信息录入" class="headerlink" title="信息录入"></a>信息录入</h5><p>从摄像头模块获取一帧的图像，在弹出的窗口中用户输入相关的信息，窗口检查信息是否填写完整，完整则将所填信息存入一个结构体中。触发人脸识别模块的开始，在线程中对采集的人脸图像进行人脸检测，特征提取，人脸截取。最后由主界面显示人员信息并存入数据库。</p><h5 id="一键签到"><a href="#一键签到" class="headerlink" title="一键签到"></a>一键签到</h5><p>从摄像头模块获取一帧图像，在线程中开辟4个子线程由线程池管理，4个子线程读取本地特征数据，与采集的人脸进行比对，找到相似度最高人脸进行信息显示并存入数据库。</p><h1 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h1><ul><li>1、人脸识别模块可与人脸检索模块进行整合，避免代码的冗余。</li><li>2、将人脸特征值保存在本地是因为特征长度太长，若读入内存会造成内存不足的情况，但是从磁盘中读取速度过慢，要找到一个能够平衡的方法，提高检索速度。</li><li>3、线程池中管理的内存在每次比对时都要对人脸识别引擎进行初始化和销毁引擎造成检索速度过慢。</li><li>4、没有理解线程管理的方法，仅使用简单的线程池来管理，使得线程的使用受到限制，效率过低。</li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>抽空对多线程管理进行复习，改进线程管理的部分。提高人脸检索的效率。蜗壳真的强。</p>]]></content>
     
     <summary type="html">
     
