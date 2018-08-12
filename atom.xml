@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.snailz.top/"/>
-  <updated>2018-08-11T10:13:23.759Z</updated>
+  <updated>2018-08-12T01:31:06.938Z</updated>
   <id>http://www.snailz.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>高数题型（一）----求极限相关题型</title>
+    <link href="http://www.snailz.top/2018/08/12/fundamental3/"/>
+    <id>http://www.snailz.top/2018/08/12/fundamental3/</id>
+    <published>2018-08-12T01:22:21.000Z</published>
+    <updated>2018-08-12T01:31:06.938Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>总结一下红宝书里的第一章求极限相关的题型<br><a id="more"></a></p><h3 id="1、-cfrac-0-0-和-cfrac-infty-infty-和-0-cdot-infty"><a href="#1、-cfrac-0-0-和-cfrac-infty-infty-和-0-cdot-infty" class="headerlink" title="1、$\cfrac{0}{0} 和 \cfrac{\infty}{\infty} 和 0\cdot\infty$"></a>1、$\cfrac{0}{0} 和 \cfrac{\infty}{\infty} 和 0\cdot\infty$</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;总结一下红宝书里的第一章求极限相关的题型&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="基础积累" scheme="http://www.snailz.top/categories/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>蜗牛墙裂安利（三）</title>
