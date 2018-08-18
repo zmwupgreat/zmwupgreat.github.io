@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.snailz.top/"/>
-  <updated>2018-08-18T03:55:47.157Z</updated>
+  <updated>2018-08-18T04:05:14.220Z</updated>
   <id>http://www.snailz.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蜗牛移山第五周</title>
+    <link href="http://www.snailz.top/2018/08/18/Fight-5Week/"/>
+    <id>http://www.snailz.top/2018/08/18/Fight-5Week/</id>
+    <published>2018-08-18T03:58:11.000Z</published>
+    <updated>2018-08-18T04:05:14.220Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这周真的是过的没有感觉，不知不觉第五周了，前几周看课本的时候还觉得有点收获，这周真的过的匆匆忙忙。</p><h1 id="复习进度"><a href="#复习进度" class="headerlink" title="复习进度"></a>复习进度</h1><p>现在复习让我感觉特别紧张，每天看起来一直在学习，但是好像进度缓慢，一整周的时间才把一元函数微分学看完，而且看完还是比较懵逼的，做题的错误率比较高，有点迷茫呀。得调整一下自己的复习方法了，多总结，举一反三。要把做题的效率提高。英语这周练习做的还不错，要是能沉下心来做，争取率较高。下周开始一元函数积分学了，要抓紧速度了。</p><h1 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h1><p>这周同学请客吃饭，运动有点落下了，要坚持住。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>真的感觉时间很不够用了，希望接下来要提高自己的效率把时间都利用起来不能吊儿郎当的了。<br><img src="http://pcnzo4nai.bkt.clouddn.com/ocean2.jpg" alt="ocean"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;这周真的是过的没有感觉，不知不觉第五周了，前几周看课本的时候还觉得有点收获，这周真的过的匆匆忙忙。&lt;/p&gt;
+&lt;h1 id=&quot;复习进度&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+      <category term="杂事闲谈" scheme="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>高数题型（二）----一元函数微分学</title>
@@ -508,27 +532,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
     </summary>
     
       <category term="杂事闲谈" scheme="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello-SnailZBlog</title>
-    <link href="http://www.snailz.top/2018/07/22/%C2%96Hello-SnailZBlog/"/>
-    <id>http://www.snailz.top/2018/07/22/Hello-SnailZBlog/</id>
-    <published>2018-07-22T03:33:30.000Z</published>
-    <updated>2018-08-02T12:45:40.719Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://pcnzo4nai.bkt.clouddn.com/fullsizerender.jpg" alt="panda"></p><h1 id="乘凉"><a href="#乘凉" class="headerlink" title="乘凉"></a>乘凉</h1><p>  前人栽树后人乘凉，我这是azha栽树snail乘凉，根据azha的博客很快就把这个地方建起来了。现在还是很丑，慢慢美化吧。我真的是个重度拖延症患者，这学期初的时候就想着建个博客来玩玩，一直到学期末才把这东西搞起来。就想能够写点有用没用的东西吧，可能多年以后看着会笑但是也就想记录记录。可能会写点生活，写点技术，写点吐槽，写点抱怨，写点正能量负能量的东西。希望自己可以坚持下去，现在的目标是一周一篇吧，不管长短，不管语句是否优美，不管语法有没有错误，不管文不文艺。</p><a id="more"></a><h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><p>  现在正处在一个比较尴尬的时间点上，大三暑假，大学接近尾声。很多人说大一不懂不知道且不知道不懂，大二不懂自己懂，大三懂自己不懂，大四知道自己知道。我现在懂自己不懂的太多了，心里慌得一匹。刚刚实习结束，仿佛学了很多也仿佛没积累多少。考研的大山直接在面前。未来还是很迷茫，看着身边的同学，师兄在找工作的时候遇到的问题就感觉很恐怖。竞争压力真的越来越大。跟以前的升学压力不是能够相提并论的。跟身边的同学比较起来感觉我的思想还是很幼稚的，我还在想有时间可以学点东西，可以做点自己想做的事情。而他们已经开始考虑城市，考虑房价，考虑家庭，感情生活。感觉在思想的成长上我已经远远落后于别人。我是一个懒散的人，以前做事也都是不顾前顾后。现在心慌，想让自己在做事的时候能够静下来，在做事的时候能够紧起来，在做事的时候能够像个成年人。离走上社会的时间真的越来越少了。希望自己能够用这些时间沉下来做点积累，做一个稍微有竞争力的人。</p><h1 id="积累"><a href="#积累" class="headerlink" title="积累"></a>积累</h1><p>看了一些同学，师兄面试笔试做的题，一脸懵逼，这些知识真的不是短时间内能够速成掌握的。特别是操作系统，计算机组成原理，数据结构与算法这些基础性能内容真的得好好积累好好复习才能够真正掌握。以前在学这些科目的时候虽然很有兴趣但是感觉吊儿郎当。没有真正记在心中所以考试完后渐渐都丢掉了，真的很可惜。作为一个985大学生的竞争力都被我丢掉拉。还有实习这段时间中跟师兄，老师学的东西也没有一个系统的整理。很多在实习过程中遇到的这样那样的问题，解决之后就没有再去回顾了，我也觉得很可惜，这些都是宝贵的经验。希望能够在这里做点积累，把以前遇到的问题做个总结，把新的问题做个记录，可能以后看起来会很幼稚哈哈哈（就像今年看我去年写的代码，真的觉得去年的我好蠢）。后面上研究生之后，就得以就业为主要目的做更多的积累。</p><h1 id="杂事"><a href="#杂事" class="headerlink" title="杂事"></a>杂事</h1><p>考研复习才进行了一周，一开始两三天注意力比较集中，一下把一本数学课本刷完了感觉还不错，主要是大一学的比较认真，除了微分方程其他的基本一回顾就能想起来，可是后面几天想东想西，不知为何情绪有点波动，可能是第二本书确实比较难就开始怀疑人生了吧。就想把自己考研中的心理变化做个记录吧，看看自己到底在为什么蠢事波动。同时再记录一些生活上的蠢事吧，很多时候心里有想说的话，但是身边没有人可以面对面倾诉都堆在这里吧。</p><h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>个人比较喜欢NBA，喜欢看军事，喜欢看台海新闻，喜欢看科技新闻，每天吃饭就配这些新闻吃哈哈哈，还想在这写点吐槽的东西。</p><h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>这里写的每个字都是我自己心理想的，就算吐槽也是当时心理想的乱七八糟的东西，没有针对谁，不过应该也没有什么人会来看我的博客哈哈哈。不过现在网络暴力这么恐怖还有点小害怕。反正我是一个常变的人要是以后的吐槽里面有写什么得罪人的话纯属放屁。想想我以前吐槽詹姆斯打球靠身体，现在觉得他可牛逼了。</p><p>现在就先想到这些东西吧，希望自己能够坚持把自己稍微记录一下。</p><p>蜗壳真的强。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://pcnzo4nai.bkt.clouddn.com/fullsizerender.jpg&quot; alt=&quot;panda&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;乘凉&quot;&gt;&lt;a href=&quot;#乘凉&quot; class=&quot;headerlink&quot; title=&quot;乘凉&quot;&gt;&lt;/a&gt;乘凉&lt;/h1&gt;&lt;p&gt;  前人栽树后人乘凉，我这是azha栽树snail乘凉，根据azha的博客很快就把这个地方建起来了。现在还是很丑，慢慢美化吧。我真的是个重度拖延症患者，这学期初的时候就想着建个博客来玩玩，一直到学期末才把这东西搞起来。就想能够写点有用没用的东西吧，可能多年以后看着会笑但是也就想记录记录。可能会写点生活，写点技术，写点吐槽，写点抱怨，写点正能量负能量的东西。希望自己可以坚持下去，现在的目标是一周一篇吧，不管长短，不管语句是否优美，不管语法有没有错误，不管文不文艺。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="关于Snail" scheme="http://www.snailz.top/categories/%E5%85%B3%E4%BA%8ESnail/"/>
     
     
   </entry>
