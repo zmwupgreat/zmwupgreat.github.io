@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.snailz.top/"/>
-  <updated>2018-09-01T08:02:27.906Z</updated>
+  <updated>2018-09-05T08:27:50.958Z</updated>
   <id>http://www.snailz.top/</id>
   
   <author>
@@ -21,9 +21,16 @@
     <link href="http://www.snailz.top/2018/09/01/fundamental3/"/>
     <id>http://www.snailz.top/2018/09/01/fundamental3/</id>
     <published>2018-09-01T06:41:28.000Z</published>
-    <updated>2018-09-01T08:02:27.906Z</updated>
+    <updated>2018-09-05T08:27:50.958Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>内存管理看起来好像是摸不着的东西，但是和每个程序息息相关。想要掌握语言底层的知识，内存管理是必不可少也是不能躲避的。之前在写一个Qt项目的时候就遇到内存泄漏的低级错误。所以我想要通过一系列的博客来总结一下自己对于内存管理的学习理解。</p><h1 id="内存分配的方式（内存五大分区）"><a href="#内存分配的方式（内存五大分区）" class="headerlink" title="内存分配的方式（内存五大分区）"></a>内存分配的方式（内存五大分区）</h1><h2 id="栈区："><a href="#栈区：" class="headerlink" title="栈区："></a>栈区：</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="http://https://chenqx.github.io/2014/09/25/Cpp-Memory-Management/" target="_blank" rel="noopener">ShinChan’s Blog</a></li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;内存管理看起来好像是摸不着的东西，但是和每个程序息息相关。想要掌握语言底层的知识，内存管理是必不可少也是不能躲避的。之前在写一个Qt项目的时
+      
     
     </summary>
     
@@ -153,13 +160,13 @@
   </entry>
   
   <entry>
-    <title>蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化</title>
+    <title>蜗牛基础积累（二）----二叉搜索树（BST）</title>
     <link href="http://www.snailz.top/2018/08/04/fundamental2/"/>
     <id>http://www.snailz.top/2018/08/04/fundamental2/</id>
     <published>2018-08-04T02:02:02.000Z</published>
-    <updated>2018-08-04T02:49:54.752Z</updated>
+    <updated>2018-09-05T08:00:25.685Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。<br><a id="more"></a></p><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>&lt;未完待续&gt;</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。<br><a id="more"></a></p><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树或者是一棵空树，或者具有下列性质的二叉树：</p><ol><li>若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值。</li><li>若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值。</li><li>任意节点的左右子树也分别为二叉搜索树</li><li>没有键值相等的节点。<br>二叉搜索树是一种能存储特定数据类型的容器。与数组和链表相比较，二叉搜索树支持快速查找，添加或删除节点。而数组虽然可以利用下标快速查找，但是删除和插入元素比较麻烦。链表可以快速删除和插入元素，但是查找很慢。</li></ol><h1 id="二叉搜索树的性能"><a href="#二叉搜索树的性能" class="headerlink" title="二叉搜索树的性能"></a>二叉搜索树的性能</h1><p>二叉搜索树的操作类似于二分查找，在节点处进行比较。每次操作的比较之后，数据规模都变为原来的一半，故二叉搜索树查找的时间复杂度为O(logn),与树的高度有关。但是在最坏的情况下，二叉搜索树会退化为一个链表，查找的时间复杂度退化为O（n）。</p><h1 id="二叉搜索树的遍历"><a href="#二叉搜索树的遍历" class="headerlink" title="二叉搜索树的遍历"></a>二叉搜索树的遍历</h1><p>&lt;未完待续&gt;</p>]]></content>
     
     <summary type="html">
     

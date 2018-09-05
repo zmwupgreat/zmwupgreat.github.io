@@ -85,14 +85,14 @@
 
 <meta name="description" content="摘要这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化">
+<meta property="og:title" content="蜗牛基础积累（二）----二叉搜索树（BST）">
 <meta property="og:url" content="http://www.snailz.top/2018/08/04/fundamental2/index.html">
 <meta property="og:site_name" content="SnailZBlog">
 <meta property="og:description" content="摘要这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-04T02:49:54.752Z">
+<meta property="og:updated_time" content="2018-09-05T08:00:25.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化">
+<meta name="twitter:title" content="蜗牛基础积累（二）----二叉搜索树（BST）">
 <meta name="twitter:description" content="摘要这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。">
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化 | SnailZBlog</title>
+  <title>蜗牛基础积累（二）----二叉搜索树（BST） | SnailZBlog</title>
   
 
 
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化</h1>
+          <h1 class="post-title" itemprop="name headline">蜗牛基础积累（二）----二叉搜索树（BST）</h1>
         
 
         <div class="post-meta">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  77
+                  409
                 </span>
               
 
@@ -378,7 +378,15 @@
 
       
         <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。<br><a id="more"></a></p>
-<h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>&lt;未完待续&gt;</p>
+<h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树或者是一棵空树，或者具有下列性质的二叉树：</p>
+<ol>
+<li>若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值。</li>
+<li>若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值。</li>
+<li>任意节点的左右子树也分别为二叉搜索树</li>
+<li>没有键值相等的节点。<br>二叉搜索树是一种能存储特定数据类型的容器。与数组和链表相比较，二叉搜索树支持快速查找，添加或删除节点。而数组虽然可以利用下标快速查找，但是删除和插入元素比较麻烦。链表可以快速删除和插入元素，但是查找很慢。</li>
+</ol>
+<h1 id="二叉搜索树的性能"><a href="#二叉搜索树的性能" class="headerlink" title="二叉搜索树的性能"></a>二叉搜索树的性能</h1><p>二叉搜索树的操作类似于二分查找，在节点处进行比较。每次操作的比较之后，数据规模都变为原来的一半，故二叉搜索树查找的时间复杂度为O(logn),与树的高度有关。但是在最坏的情况下，二叉搜索树会退化为一个链表，查找的时间复杂度退化为O（n）。</p>
+<h1 id="二叉搜索树的遍历"><a href="#二叉搜索树的遍历" class="headerlink" title="二叉搜索树的遍历"></a>二叉搜索树的遍历</h1><p>&lt;未完待续&gt;</p>
 
       
     </div>
@@ -394,12 +402,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/08/04/fundamental2/">蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化</a></p>
+  <p><span>本文标题:</span><a href="/2018/08/04/fundamental2/">蜗牛基础积累（二）----二叉搜索树（BST）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SnailZ 的个人博客">SnailZ</a></p>
   <p><span>发布时间:</span>2018年08月04日 - 10:08</p>
-  <p><span>最后更新:</span>2018年08月04日 - 10:08</p>
+  <p><span>最后更新:</span>2018年09月05日 - 16:09</p>
   <p><span>联系方式:</span>zmw961125@gmail.com</p>
-  <p><span>原始链接:</span><a href="/2018/08/04/fundamental2/" title="蜗牛基础积累（二）----二叉搜索树（BST）的序列化和反序列化">http://www.snailz.top/2018/08/04/fundamental2/</a>
+  <p><span>原始链接:</span><a href="/2018/08/04/fundamental2/" title="蜗牛基础积累（二）----二叉搜索树（BST）">http://www.snailz.top/2018/08/04/fundamental2/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/08/04/fundamental2/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -629,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">2.</span> <span class="nav-text">二叉搜索树</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">2.</span> <span class="nav-text">二叉搜索树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树的性能"><span class="nav-number">3.</span> <span class="nav-text">二叉搜索树的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树的遍历"><span class="nav-number">4.</span> <span class="nav-text">二叉搜索树的遍历</span></a></li></ol></div>
             
 
           </div>
@@ -664,7 +672,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.8k</span>
+    <span title="Site words total count">17.3k</span>
   
 </div>
 
@@ -687,7 +695,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共16.8k字</span>
+  <span class="post-count">博客全站共17.3k字</span>
 </div>
 -->
         
