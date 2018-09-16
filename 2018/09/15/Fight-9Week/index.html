@@ -83,17 +83,20 @@
 
 
 
-<meta name="description" content="摘要这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。">
+<meta name="description" content="摘要昨晚没睡好，头晕的不行，一晚上可能就没睡多久。太伤身了哇太难受了。刚刚把下周要答辩的ppt准备了一下还剩演示部分没有搞，心理一点底都没有哎呀。答辩太烦了，还有一个创新项目的答辩。创新项目更烦，早知道当时就不报了。太麻烦了。都有点忘了这周做了些什么。不过下周应该就可以刷完第一遍红宝书了。下下周可以第二遍开始再总结一哈。 复习进度这周复习到线性代数的特征值特征向量了。感觉线性代数部分复习的还挺快。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛基础积累（二）----二叉搜索树（BST）">
-<meta property="og:url" content="http://www.snailz.top/2018/08/04/fundamental2/index.html">
+<meta property="og:title" content="蜗牛移山第九周">
+<meta property="og:url" content="http://www.snailz.top/2018/09/15/Fight-9Week/index.html">
 <meta property="og:site_name" content="SnailZBlog">
-<meta property="og:description" content="摘要这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。">
+<meta property="og:description" content="摘要昨晚没睡好，头晕的不行，一晚上可能就没睡多久。太伤身了哇太难受了。刚刚把下周要答辩的ppt准备了一下还剩演示部分没有搞，心理一点底都没有哎呀。答辩太烦了，还有一个创新项目的答辩。创新项目更烦，早知道当时就不报了。太麻烦了。都有点忘了这周做了些什么。不过下周应该就可以刷完第一遍红宝书了。下下周可以第二遍开始再总结一哈。 复习进度这周复习到线性代数的特征值特征向量了。感觉线性代数部分复习的还挺快。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T08:00:25.685Z">
+<meta property="og:image" content="http://pcnzo4nai.bkt.clouddn.com/week9-1.PNG">
+<meta property="og:image" content="http://pcnzo4nai.bkt.clouddn.com/week9-2.jpg">
+<meta property="og:updated_time" content="2018-09-16T11:22:09.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜗牛基础积累（二）----二叉搜索树（BST）">
-<meta name="twitter:description" content="摘要这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。">
+<meta name="twitter:title" content="蜗牛移山第九周">
+<meta name="twitter:description" content="摘要昨晚没睡好，头晕的不行，一晚上可能就没睡多久。太伤身了哇太难受了。刚刚把下周要答辩的ppt准备了一下还剩演示部分没有搞，心理一点底都没有哎呀。答辩太烦了，还有一个创新项目的答辩。创新项目更烦，早知道当时就不报了。太麻烦了。都有点忘了这周做了些什么。不过下周应该就可以刷完第一遍红宝书了。下下周可以第二遍开始再总结一哈。 复习进度这周复习到线性代数的特征值特征向量了。感觉线性代数部分复习的还挺快。">
+<meta name="twitter:image" content="http://pcnzo4nai.bkt.clouddn.com/week9-1.PNG">
 
 
 
@@ -123,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://www.snailz.top/2018/08/04/fundamental2/"/>
+  <link rel="canonical" href="http://www.snailz.top/2018/09/15/Fight-9Week/"/>
 
 
 
 
 
-  <title>蜗牛基础积累（二）----二叉搜索树（BST） | SnailZBlog</title>
+  <title>蜗牛移山第九周 | SnailZBlog</title>
   
 
 
@@ -256,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.snailz.top/2018/08/04/fundamental2/">
+    <link itemprop="mainEntityOfPage" href="http://www.snailz.top/2018/09/15/Fight-9Week/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SnailZ">
@@ -273,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蜗牛基础积累（二）----二叉搜索树（BST）</h1>
+          <h1 class="post-title" itemprop="name headline">蜗牛移山第九周</h1>
         
 
         <div class="post-meta">
@@ -286,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-04T10:02:02+08:00">
-                2018-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-15T19:00:57+08:00">
+                2018-09-15
               </time>
             
 
@@ -309,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础积累/" itemprop="url" rel="index">
-                    <span itemprop="name">基础积累</span>
+                  <a href="/categories/杂事闲谈/" itemprop="url" rel="index">
+                    <span itemprop="name">杂事闲谈</span>
                   </a>
                 </span>
 
@@ -340,7 +343,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  409
+                  336
                 </span>
               
 
@@ -377,16 +380,13 @@
       
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>这是最近遇到的一个基础数据结构的题，这篇文章就想总结一下二叉搜索树的性质，二叉搜索树的遍历方法，二叉搜索树的重建方法。总结一下思路和代码实现。<br><a id="more"></a></p>
-<h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树或者是一棵空树，或者具有下列性质的二叉树：</p>
-<ol>
-<li>若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值。</li>
-<li>若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值。</li>
-<li>任意节点的左右子树也分别为二叉搜索树</li>
-<li>没有键值相等的节点。<br>二叉搜索树是一种能存储特定数据类型的容器。与数组和链表相比较，二叉搜索树支持快速查找，添加或删除节点。而数组虽然可以利用下标快速查找，但是删除和插入元素比较麻烦。链表可以快速删除和插入元素，但是查找很慢。</li>
-</ol>
-<h1 id="二叉搜索树的性能"><a href="#二叉搜索树的性能" class="headerlink" title="二叉搜索树的性能"></a>二叉搜索树的性能</h1><p>二叉搜索树的操作类似于二分查找，在节点处进行比较。每次操作的比较之后，数据规模都变为原来的一半，故二叉搜索树查找的时间复杂度为O(logn),与树的高度有关。但是在最坏的情况下，二叉搜索树会退化为一个链表，查找的时间复杂度退化为O（n）。</p>
-<h1 id="二叉搜索树的遍历"><a href="#二叉搜索树的遍历" class="headerlink" title="二叉搜索树的遍历"></a>二叉搜索树的遍历</h1><p>&lt;未完待续&gt;</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>昨晚没睡好，头晕的不行，一晚上可能就没睡多久。太伤身了哇太难受了。刚刚把下周要答辩的ppt准备了一下还剩演示部分没有搞，心理一点底都没有哎呀。答辩太烦了，还有一个创新项目的答辩。创新项目更烦，早知道当时就不报了。太麻烦了。都有点忘了这周做了些什么。不过下周应该就可以刷完第一遍红宝书了。下下周可以第二遍开始再总结一哈。</p>
+<h1 id="复习进度"><a href="#复习进度" class="headerlink" title="复习进度"></a>复习进度</h1><p>这周复习到线性代数的特征值特征向量了。感觉线性代数部分复习的还挺快。不过特征值特征向量和二次型贼难。下周看看能不能提高效率把线性代数和概率论搞定。搞定好就可以再重新review一遍。英语模拟阅读快要做完了，开始看了点网络的东西。感觉可以像看小说一样看那本书。这周好像统计里学习的时间比睡觉时间还长，不过感觉还是有点困。天气转冷了困意越来越浓。晚上得早睡了。<br>下面是这周的饼状图</p>
+<p><center>
+<img src="http://pcnzo4nai.bkt.clouddn.com/week9-1.PNG" width="40%">
+</center></p>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>蜗壳真的强！希望下周两个答辩顺利。<br><img src="http://pcnzo4nai.bkt.clouddn.com/week9-2.jpg" alt="长城"></p>
 
       
     </div>
@@ -402,13 +402,13 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/08/04/fundamental2/">蜗牛基础积累（二）----二叉搜索树（BST）</a></p>
+  <p><span>本文标题:</span><a href="/2018/09/15/Fight-9Week/">蜗牛移山第九周</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SnailZ 的个人博客">SnailZ</a></p>
-  <p><span>发布时间:</span>2018年08月04日 - 10:08</p>
-  <p><span>最后更新:</span>2018年09月05日 - 16:09</p>
+  <p><span>发布时间:</span>2018年09月15日 - 19:09</p>
+  <p><span>最后更新:</span>2018年09月16日 - 19:09</p>
   <p><span>联系方式:</span>zmw961125@gmail.com</p>
-  <p><span>原始链接:</span><a href="/2018/08/04/fundamental2/" title="蜗牛基础积累（二）----二叉搜索树（BST）">http://www.snailz.top/2018/08/04/fundamental2/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/08/04/fundamental2/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2018/09/15/Fight-9Week/" title="蜗牛移山第九周">http://www.snailz.top/2018/09/15/Fight-9Week/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/09/15/Fight-9Week/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -445,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/04/Fight-3Week/" rel="next" title="蜗牛移山第三周">
-                <i class="fa fa-chevron-left"></i> 蜗牛移山第三周
+              <a href="/2018/09/08/Fight-8Week/" rel="next" title="蜗牛移山第八周">
+                <i class="fa fa-chevron-left"></i> 蜗牛移山第八周
               </a>
             
           </div>
@@ -454,10 +454,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/11/Fight-4Week/" rel="prev" title="蜗牛移山第四周">
-                蜗牛移山第四周 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -637,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">2.</span> <span class="nav-text">二叉搜索树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树的性能"><span class="nav-number">3.</span> <span class="nav-text">二叉搜索树的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树的遍历"><span class="nav-number">4.</span> <span class="nav-text">二叉搜索树的遍历</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复习进度"><span class="nav-number">2.</span> <span class="nav-text">复习进度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
