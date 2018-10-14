@@ -83,17 +83,13 @@
 
 
 
-<meta name="description" content="摘要内存管理看起来好像是摸不着的东西，但是和每个程序息息相关。想要掌握语言底层的知识，内存管理是必不可少也是不能躲避的。之前在写一个Qt项目的时候就遇到内存泄漏的低级错误。所以我想要通过一系列的博客来总结一下自己对于内存管理的学习理解。 内存分配的方式（内存五大分区）栈区：参考资料 ShinChan’s Blog">
-<meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛基础积累（三）----C&#x2F;C++内存管理机制">
-<meta property="og:url" content="http://www.snailz.top/2018/09/01/fundamental3/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SnailZBlog">
+<meta property="og:url" content="http://www.snailz.top/archives/2018/10/index.html">
 <meta property="og:site_name" content="SnailZBlog">
-<meta property="og:description" content="摘要内存管理看起来好像是摸不着的东西，但是和每个程序息息相关。想要掌握语言底层的知识，内存管理是必不可少也是不能躲避的。之前在写一个Qt项目的时候就遇到内存泄漏的低级错误。所以我想要通过一系列的博客来总结一下自己对于内存管理的学习理解。 内存分配的方式（内存五大分区）栈区：参考资料 ShinChan’s Blog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T08:27:50.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜗牛基础积累（三）----C&#x2F;C++内存管理机制">
-<meta name="twitter:description" content="摘要内存管理看起来好像是摸不着的东西，但是和每个程序息息相关。想要掌握语言底层的知识，内存管理是必不可少也是不能躲避的。之前在写一个Qt项目的时候就遇到内存泄漏的低级错误。所以我想要通过一系列的博客来总结一下自己对于内存管理的学习理解。 内存分配的方式（内存五大分区）栈区：参考资料 ShinChan’s Blog">
+<meta name="twitter:title" content="SnailZBlog">
 
 
 
@@ -123,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://www.snailz.top/2018/09/01/fundamental3/"/>
+  <link rel="canonical" href="http://www.snailz.top/archives/2018/10/"/>
 
 
 
 
 
-  <title>蜗牛基础积累（三）----C/C++内存管理机制 | SnailZBlog</title>
+  <title>归档 | SnailZBlog</title>
   
 
 
@@ -158,7 +154,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,236 +238,74 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 28 篇日志。 继续努力。
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.snailz.top/2018/09/01/fundamental3/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SnailZ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/author.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SnailZBlog">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2018/10/14/Fight-1213week/" itemprop="url">
+              
+                <span itemprop="name">蜗牛移山十二十三周</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">蜗牛基础积累（三）----C/C++内存管理机制</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-		  
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T14:41:28+08:00">
-                2018-09-01
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-10-14T20:52:24+08:00"
+              content="2018-10-14" >
+          10-14
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础积累/" itemprop="url" rel="index">
-                    <span itemprop="name">基础积累</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  133
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>内存管理看起来好像是摸不着的东西，但是和每个程序息息相关。想要掌握语言底层的知识，内存管理是必不可少也是不能躲避的。之前在写一个Qt项目的时候就遇到内存泄漏的低级错误。所以我想要通过一系列的博客来总结一下自己对于内存管理的学习理解。</p>
-<h1 id="内存分配的方式（内存五大分区）"><a href="#内存分配的方式（内存五大分区）" class="headerlink" title="内存分配的方式（内存五大分区）"></a>内存分配的方式（内存五大分区）</h1><h2 id="栈区："><a href="#栈区：" class="headerlink" title="栈区："></a>栈区：</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="http://https://chenqx.github.io/2014/09/25/Cpp-Memory-Management/" target="_blank" rel="noopener">ShinChan’s Blog</a></li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-	<div>
-		
-			
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/09/01/fundamental3/">蜗牛基础积累（三）----C/C++内存管理机制</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 SnailZ 的个人博客">SnailZ</a></p>
-  <p><span>发布时间:</span>2018年09月01日 - 14:09</p>
-  <p><span>最后更新:</span>2018年09月05日 - 16:09</p>
-  <p><span>联系方式:</span>zmw961125@gmail.com</p>
-  <p><span>原始链接:</span><a href="/2018/09/01/fundamental3/" title="蜗牛基础积累（三）----C/C++内存管理机制">http://www.snailz.top/2018/09/01/fundamental3/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/09/01/fundamental3/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-      $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({   
-          title: "",   
-          text: '复制成功',
-          icon: "success", 
-          showConfirmButton: true
-          });
-        });
-    });  
-</script>
-
-		
-	</div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/09/01/share4/" rel="next" title="蜗牛墙裂安利（四）">
-                <i class="fa fa-chevron-left"></i> 蜗牛墙裂安利（四）
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/08/Fight-8Week/" rel="prev" title="蜗牛移山第八周">
-                蜗牛移山第八周 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -479,10 +313,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -503,17 +333,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -621,22 +442,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存分配的方式（内存五大分区）"><span class="nav-number">2.</span> <span class="nav-text">内存分配的方式（内存五大分区）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#栈区："><span class="nav-number">2.1.</span> <span class="nav-text">栈区：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -795,10 +600,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
