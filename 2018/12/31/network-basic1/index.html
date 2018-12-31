@@ -83,17 +83,25 @@
 
 
 
-<meta name="description" content="摘要给定一个长度为n的整数数组a，元素均不相同，问数组是否存在这样一个片段，只将该片段翻转就可以使整个数组升序排列。其中数组片段[l,r]表示序列a[l], a[l+1], …, a[r]。原始数组为a[1], a[2], …, a[l-2], a[l-1], a[l], a[l+1], …, a[r-1], a[r], a[r+1], a[r+2], …, a[n-1], a[n]，将片段[l,">
+<meta name="description" content="摘要可靠数据传输是网络传输中一个重要的内容，能够有效保障数据的正确性。通常可靠数据传输的实现不仅在运输层，在链路层和应用层都有不同方法的实现。这里讨论在运输层的三种可靠数据传输的原理和流程。通常可靠数据传输是使用失败重传和接收确认的方法来实现的。所以在下面三种可靠数据传输的原理中，发送方在发送数据后都会等待来自接收方的确认，若没有接收到确认，则代表接收方没有正确接收到数据或者确认数据包没有正常发送">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛算法积累（三）----翻转数组">
-<meta property="og:url" content="http://www.snailz.top/2018/07/29/arithmetic3/index.html">
+<meta property="og:title" content="计算机网络自顶向下笔记（一）：运输层可靠传输">
+<meta property="og:url" content="http://www.snailz.top/2018/12/31/network-basic1/index.html">
 <meta property="og:site_name" content="SnailZBlog">
-<meta property="og:description" content="摘要给定一个长度为n的整数数组a，元素均不相同，问数组是否存在这样一个片段，只将该片段翻转就可以使整个数组升序排列。其中数组片段[l,r]表示序列a[l], a[l+1], …, a[r]。原始数组为a[1], a[2], …, a[l-2], a[l-1], a[l], a[l+1], …, a[r-1], a[r], a[r+1], a[r+2], …, a[n-1], a[n]，将片段[l,">
+<meta property="og:description" content="摘要可靠数据传输是网络传输中一个重要的内容，能够有效保障数据的正确性。通常可靠数据传输的实现不仅在运输层，在链路层和应用层都有不同方法的实现。这里讨论在运输层的三种可靠数据传输的原理和流程。通常可靠数据传输是使用失败重传和接收确认的方法来实现的。所以在下面三种可靠数据传输的原理中，发送方在发送数据后都会等待来自接收方的确认，若没有接收到确认，则代表接收方没有正确接收到数据或者确认数据包没有正常发送">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T12:46:02.473Z">
+<meta property="og:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/rdt3.0.gif">
+<meta property="og:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/GBN1.gif">
+<meta property="og:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/GBN2.gif">
+<meta property="og:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/GBN3.gif">
+<meta property="og:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/SR1.gif">
+<meta property="og:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/SR2.gif">
+<meta property="og:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/SR3.gif">
+<meta property="og:updated_time" content="2018-12-31T14:51:44.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜗牛算法积累（三）----翻转数组">
-<meta name="twitter:description" content="摘要给定一个长度为n的整数数组a，元素均不相同，问数组是否存在这样一个片段，只将该片段翻转就可以使整个数组升序排列。其中数组片段[l,r]表示序列a[l], a[l+1], …, a[r]。原始数组为a[1], a[2], …, a[l-2], a[l-1], a[l], a[l+1], …, a[r-1], a[r], a[r+1], a[r+2], …, a[n-1], a[n]，将片段[l,">
+<meta name="twitter:title" content="计算机网络自顶向下笔记（一）：运输层可靠传输">
+<meta name="twitter:description" content="摘要可靠数据传输是网络传输中一个重要的内容，能够有效保障数据的正确性。通常可靠数据传输的实现不仅在运输层，在链路层和应用层都有不同方法的实现。这里讨论在运输层的三种可靠数据传输的原理和流程。通常可靠数据传输是使用失败重传和接收确认的方法来实现的。所以在下面三种可靠数据传输的原理中，发送方在发送数据后都会等待来自接收方的确认，若没有接收到确认，则代表接收方没有正确接收到数据或者确认数据包没有正常发送">
+<meta name="twitter:image" content="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/rdt3.0.gif">
 
 
 
@@ -123,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://www.snailz.top/2018/07/29/arithmetic3/"/>
+  <link rel="canonical" href="http://www.snailz.top/2018/12/31/network-basic1/"/>
 
 
 
 
 
-  <title>蜗牛算法积累（三）----翻转数组 | SnailZBlog</title>
+  <title>计算机网络自顶向下笔记（一）：运输层可靠传输 | SnailZBlog</title>
   
 
 
@@ -256,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.snailz.top/2018/07/29/arithmetic3/">
+    <link itemprop="mainEntityOfPage" href="http://www.snailz.top/2018/12/31/network-basic1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SnailZ">
@@ -273,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蜗牛算法积累（三）----翻转数组</h1>
+          <h1 class="post-title" itemprop="name headline">计算机网络自顶向下笔记（一）：运输层可靠传输</h1>
         
 
         <div class="post-meta">
@@ -286,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T12:48:01+08:00">
-                2018-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-31T21:19:42+08:00">
+                2018-12-31
               </time>
             
 
@@ -309,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试算法积累/" itemprop="url" rel="index">
-                    <span itemprop="name">面试算法积累</span>
+                  <a href="/categories/基础积累/" itemprop="url" rel="index">
+                    <span itemprop="name">基础积累</span>
                   </a>
                 </span>
 
@@ -340,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  416
+                  2,151
                 </span>
               
 
@@ -356,7 +364,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  8
                 </span>
               
             </div>
@@ -377,9 +385,24 @@
       
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>给定一个长度为n的整数数组a，元素均不相同，问数组是否存在这样一个片段，只将该片段翻转就可以使整个数组升序排列。其中数组片段[l,r]表示序列a[l], a[l+1], …, a[r]。原始数组为<br>a[1], a[2], …, a[l-2], a[l-1], a[l], a[l+1], …, a[r-1], a[r], a[r+1], a[r+2], …, a[n-1], a[n]，<br>将片段[l,r]反序后的数组是<br>a[1], a[2], …, a[l-2], a[l-1], a[r], a[r-1], …, a[l+1], a[l], a[r+1], a[r+2], …, a[n-1], a[n]。<br>输入<br>第一行数据是一个整数：n (1≤n≤105)，表示数组长度。<br>第二行数据是n个整数a[1], a[2], …, a[n] (1≤a[i]≤109)。<br>输出<br>输出“yes”，如果存在；否则输出“no”，不用输出引号。<br><a id="more"></a></p>
-<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>首先将数组读入后，进行排序，并保留一个原序的数组，将两个数组进行比较。找到升序数组与原数组不同的那一片段。则这个片段既是我们需要翻转的片段。将这个片段对着比较。若可以翻转则返回yes，否则no。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N;</span><br><span class="line">	<span class="keyword">int</span> src[N];</span><br><span class="line">	<span class="keyword">int</span> aim[N];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;src[i];</span><br><span class="line">		aim[i]=src[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">std</span>::sort(aim,aim+N);</span><br><span class="line">	<span class="keyword">int</span> begin=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> end=N<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span>(aim[begin]==src[begin])begin++;</span><br><span class="line">	<span class="keyword">while</span>(aim[end]==src[end])end--;</span><br><span class="line">	<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> g=<span class="number">0</span>;g&lt;=end-begin;g++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(aim[end-g]!=src[begin+g])</span><br><span class="line">		flag=<span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag)</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"yes"</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"no"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>可靠数据传输是网络传输中一个重要的内容，能够有效保障数据的正确性。通常可靠数据传输的实现不仅在运输层，在链路层和应用层都有不同方法的实现。这里讨论在运输层的三种可靠数据传输的原理和流程。通常可靠数据传输是使用失败重传和接收确认的方法来实现的。所以在下面三种可靠数据传输的原理中，发送方在发送数据后都会等待来自接收方的确认，若没有接收到确认，则代表接收方没有正确接收到数据或者确认数据包没有正常发送，发送方重传。接收方在接收到正确的数据包都会立即返回一个ACK数据包。<br><a id="more"></a></p>
+<h1 id="rdt3-0-（比特交替协议）"><a href="#rdt3-0-（比特交替协议）" class="headerlink" title="rdt3.0 （比特交替协议）"></a>rdt3.0 （比特交替协议）</h1><p>rdt3.0 比特交替协议发送方大体上分为四个状态。需要一个定时器来控制超时时间。</p>
+<h2 id="1、-状态1"><a href="#1、-状态1" class="headerlink" title="1、 状态1"></a>1、 状态1</h2><p>（1）在状态1时，发送方在等待来自上层的调用，等待上层的序号为0的数据。假如在等待的过程中，发送方接收到一个数据包（可能是来自接收方的冗余ACK）则不进行任何处理操作，继续等待来自上层的序号为0的调用。<br>（2）在状态1时，发送方等到了来自上层的序号为0的调用，则打包数据，序号为0，计算校验和。打开定时器，发送数据包。状态转向状态2 。</p>
+<h2 id="2、状态2"><a href="#2、状态2" class="headerlink" title="2、状态2"></a>2、状态2</h2><p>（1）在状态2时，发送方等待来自接收方的对于序号为0的数据包的确认ACK。<br>（2）在状态2时，发送方接收到一个来自接收方的数据包，假若该数据包数据损坏，或者该数据包是关于序号为1的冗余ACK则，发送方丢弃该数据包，继续停留在状态2等待来自接收方的关于序号0的ACK。<br>（3）在状态2时，发送方等待ACK的时候发生超时状况，表明序号为0的数据包没有正常地发送给接收方，或者接收方返回的ACK发生丢失。所以重启定时器，并重发序号为0的数据包。<br>（4）在状态2时，发送方等待到来自接收方的关于序号为0的ACK，则发送方停止计时器，状态移动到状态3 。</p>
+<h2 id="3、状态3"><a href="#3、状态3" class="headerlink" title="3、状态3"></a>3、状态3</h2><p>（1）状态3的操作过程与状态1类似，在状态3时，发送方在等待来自上层的调用，等待上层的序号为1的数据。假如在等待的过程中，发送方接收到一个数据包（可能是来自接收方的冗余ACK）则不进行任何处理操作，继续等待来自上层的序号为1的调用。<br>（2）在状态3时，发送方等到了来自上层的序号为1的调用，则打包数据，序号为1，计算校验和。打开定时器，发送数据包。状态转向状态4 。</p>
+<h2 id="4、状态4"><a href="#4、状态4" class="headerlink" title="4、状态4"></a>4、状态4</h2><p>（1）状态4的操作过程与状态2类似，在状态4时，发送方等待来自接收方的对于序号为1的数据包的确认ACK。<br>（2）在状态4时，发送方接收到一个来自接收方的数据包，假若该数据包数据损坏，或者该数据包是关于序号为0的冗余ACK则，发送方丢弃该数据包，继续停留在状态4等待来自接收方的关于序号1的ACK。<br>（3）在状态4时，发送方等待ACK的时候发生超时状况，表明序号为1的数据包没有正常地发送给接收方，或者接收方返回的ACK发生丢失。所以重启定时器，并重发序号为1的数据包。<br>（4）在状态4时，发送方等待到来自接收方的关于序号为1的ACK，则发送方停止计时器，状态移动到状态1 。<br>以下为rdt3.0运行流程的有限状态机动态图。<br><img src="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/rdt3.0.gif" alt="rdt3.0"></p>
+<p>rdt3.0作为一种特殊的停等协议存在一个问题，不能连续地发送数据，发送方每次都需要等待收到来自接收方的对于上个数据包的确认之后才能发送新的数据包。存在很大了时间浪费。所以需要引入下面的流水线传输方式。</p>
+<h1 id="GBN-回退N步协议"><a href="#GBN-回退N步协议" class="headerlink" title="GBN(回退N步协议)"></a>GBN(回退N步协议)</h1><p>GBN，允许发送方连续发送多个分组而不需要等待上一个分组确认，但它也受限于在流水线中未确认的分组数不能超过某个最大允许数N（发送窗口长度）。在GBN中需要一个定时器和两个指针。一个为base基序号，一个为nextseqnum下一个等待发送的序号。在[0,base-1]段内的序号对应于已经发送并已经被确认的分组,[base,nextseqnum-1]段内对应已经发送还未确认的分组。[nextseqnum,base+N-1]，大于base+N的分组还不能被发送。<br><img src="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/GBN1.gif" alt="gbn1"></p>
+<p>（1）GBN发送方只有一个状态，首先base和nextseqnum处于同一个位置，当这时接收到来自上层的调用，若发送窗口已满则拒绝上层应用的数据，若发送窗口未满则将数据放入缓存等待发送。<br>（2）启动定时器流水线发送数据包，发送一个数据包，nextseqnum向后移动一位，发送方继续等待。<br>（3）若接收到正确的ACK，重启定时器，继续等待，base向后移动一位，窗口也可向后移动。</p>
+<p><img src="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/GBN2.gif" alt="gbn2"></p>
+<p>（4）若接收到失序的ACK，则发送方丢弃该ACK，不做任何处理动作。<br>（5）若等待超时，则说明发生了数据包丢失或者ACK丢失的状况，所以重启定时器，从base位置开始重传数据包。</p>
+<p><img src="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/GBN3.gif" alt="gbn2"></p>
+<p>GBN接收方动作比较简单，如果一个序号为n的分组被正确接收到，并且符合顺序，则接收方为分组n发送一个ACK并将数据交付给上层应用。在其他所有情况下，接收方丢弃数据包。并回发最近确认的数据包的ACK。冗余的ACK不会使发送方有任何操作，直到超时，发送方会重传数据包。<br>GBN协议的缺点在于，接收方假若收到失序的数据包便会将数据包丢弃，发送方遇到超时就会重传一系列的数据包，造成资源的浪费。所以下面的SR选择性重传协议一定程度上解决了这个问题。</p>
+<h1 id="SR（选择重传）"><a href="#SR（选择重传）" class="headerlink" title="SR（选择重传）"></a>SR（选择重传）</h1><p>SR和GBN相似都是流水线式传输的方式，但是SR和GBN的不同之处在于SR为每一个发送的数据包提供一个定时器，所以它不会将失序的数据包丢弃。假若需要重传SR也是只重传需要重传的那个数据包，而不是暴力地重传未确认的所有数据包。</p>
+<h2 id="发送方"><a href="#发送方" class="headerlink" title="发送方"></a>发送方</h2><p>（1）从上层接收数据，当从上层接收到数据后，SR发送方检查下一个可用于该分组的序号，如果序号位于发送方的窗口内，则将数据打包并发送。<br><img src="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/SR1.gif" alt="rs1"><br>（2）超时，每个分组拥有自己的逻辑定时器，超时发生后只重传一个分组。<br>（3）收到ACK，如果收到的ACK序号在窗口内，则SR发送方将这个被确认的分组标记为已接收，如果该分许的序号等于send_base,则窗口移动到具有最小序号的未确认分组处，如果窗口移动到了未发送的分组处，则发送这些分组。</p>
+<p><img src="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/SR2.gif" alt="rs2"></p>
+<h2 id="接收方"><a href="#接收方" class="headerlink" title="接收方"></a>接收方</h2><p>（1）序号在[rcv_base,rcv_base+N-1]内的分组被正确接收，在此情况下，收到的分组落在接收方的窗口内，一个选择ACK回送给发送方，如果该分组以前没有收到过，则缓存该分组，如果该分组的序号等于接收窗口的基序号，则该分组以及以前缓存的序号连续的分组交付给上层应用。<br>（2）序号在[rcv_base-N,rcv_base-1]内的分组被正确接收，在此情况下，必须产生一个ACK，即使该分组是已经确认过的分组。<br><img src="https://snailz-1258194080.cos.ap-chengdu.myqcloud.com/network-learn/SR3.gif" alt="rs3"></p>
+
       
     </div>
     
@@ -394,13 +417,13 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/07/29/arithmetic3/">蜗牛算法积累（三）----翻转数组</a></p>
+  <p><span>本文标题:</span><a href="/2018/12/31/network-basic1/">计算机网络自顶向下笔记（一）：运输层可靠传输</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SnailZ 的个人博客">SnailZ</a></p>
-  <p><span>发布时间:</span>2018年07月29日 - 12:07</p>
-  <p><span>最后更新:</span>2018年08月02日 - 20:08</p>
+  <p><span>发布时间:</span>2018年12月31日 - 21:12</p>
+  <p><span>最后更新:</span>2018年12月31日 - 22:12</p>
   <p><span>联系方式:</span>zmw961125@gmail.com</p>
-  <p><span>原始链接:</span><a href="/2018/07/29/arithmetic3/" title="蜗牛算法积累（三）----翻转数组">http://www.snailz.top/2018/07/29/arithmetic3/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/07/29/arithmetic3/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2018/12/31/network-basic1/" title="计算机网络自顶向下笔记（一）：运输层可靠传输">http://www.snailz.top/2018/12/31/network-basic1/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.snailz.top/2018/12/31/network-basic1/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -437,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/29/people-explore/" rel="next" title="人脸考勤设计思路">
-                <i class="fa fa-chevron-left"></i> 人脸考勤设计思路
+              <a href="/2018/10/30/Fight-15week/" rel="next" title="蜗牛移山十五周">
+                <i class="fa fa-chevron-left"></i> 蜗牛移山十五周
               </a>
             
           </div>
@@ -446,10 +469,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/30/fundamental1/" rel="prev" title="蜗牛基础积累（一）----Shell Script的基本用法">
-                蜗牛基础积累（一）----Shell Script的基本用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -629,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rdt3-0-（比特交替协议）"><span class="nav-number">2.</span> <span class="nav-text">rdt3.0 （比特交替协议）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-状态1"><span class="nav-number">2.1.</span> <span class="nav-text">1、 状态1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、状态2"><span class="nav-number">2.2.</span> <span class="nav-text">2、状态2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、状态3"><span class="nav-number">2.3.</span> <span class="nav-text">3、状态3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、状态4"><span class="nav-number">2.4.</span> <span class="nav-text">4、状态4</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GBN-回退N步协议"><span class="nav-number">3.</span> <span class="nav-text">GBN(回退N步协议)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SR（选择重传）"><span class="nav-number">4.</span> <span class="nav-text">SR（选择重传）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发送方"><span class="nav-number">4.1.</span> <span class="nav-text">发送方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接收方"><span class="nav-number">4.2.</span> <span class="nav-text">接收方</span></a></li></ol></li></ol></div>
             
 
           </div>

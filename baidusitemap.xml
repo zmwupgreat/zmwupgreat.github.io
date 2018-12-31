@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://www.snailz.top/2018/12/31/network-basic1/</loc>
+    <lastmod>2018-12-31T14:51:44.170Z</lastmod>
+    <data>
+        <display>
+        <title>计算机网络自顶向下笔记（一）：运输层可靠传输</title>
+        <pubTime>2018-12-31T13:19:42.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="基础积累" url="http://www.snailz.top/categories/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.snailz.top/2018/10/30/Fight-15week/</loc>
+    <lastmod>2018-12-31T13:18:50.971Z</lastmod>
+    <data>
+        <display>
+        <title>蜗牛移山十五周</title>
+        <pubTime>2018-10-30T13:56:29.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.snailz.top/2018/07/23/talkaboutArcFace/</loc>
     <lastmod>2018-12-31T13:14:25.416Z</lastmod>
     <data>
@@ -318,24 +354,6 @@
            
              
               <breadCrumb title="关于Snail" url="http://www.snailz.top/categories/%E5%85%B3%E4%BA%8ESnail/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.snailz.top/2018/10/30/Fight-15week/</loc>
-    <lastmod>2018-10-30T14:11:02.088Z</lastmod>
-    <data>
-        <display>
-        <title>Fight-15week</title>
-        <pubTime>2018-10-30T13:56:29.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂事闲谈" url="http://www.snailz.top/categories/%E6%9D%82%E4%BA%8B%E9%97%B2%E8%B0%88/"/>
           
         </display>
     </data>
